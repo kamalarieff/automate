@@ -8,5 +8,4 @@ br.addheaders =		 [('User-allowgent', 'Firefox')]
 r = br.open('http://google.com')
 html = r.read()
 
-# Show the source
-print html # OR print br.response().read()
+print br.response().info()
