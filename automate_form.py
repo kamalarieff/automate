@@ -14,19 +14,16 @@ br.set_handle_robots(False)   # ignore robots
 br.set_handle_refresh(False)  # can sometimes hang without this
 br.addheaders =		 [('User-allowgent', 'Firefox')]
 
-r = br.open('https://regress.mudah.my:31011/controlpanel')
+r = br.open('http://regress.mudah.my:31004/ai/form/1?ca=9_s&tpl=0')
 html = r.read()
-
-
-# Show the available forms
-# This is important
-for f in br.forms():
-	print f
 
 br.select_form(nr=0)
 
-
-br.form['username']='kamal'
-br.form['cpasswd']='kamal'
+br.form['category_group']=['4180',]
+br.form['type']=['s',]
+br.form['region']=['12',]
+br.form['subarea']=['628',]
+br.form['name']='kamal'
+br.form['bag_type']=['1',]
 br.submit()
 print br.response().read()
