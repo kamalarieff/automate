@@ -1,5 +1,5 @@
 input_params = {
-	"inputs":[
+	"inputs_without_springcleaning":[
 	{
 		"type":"dropdown",
 		"element_id":"category_group",
@@ -18,7 +18,7 @@ input_params = {
 	{
 		"type":"text",
 		"element_id":"subject",
-		"value":"test using json"
+		"value":"test using json no springcleaning"
 	},
 	{
 		"type":"text",
@@ -29,6 +29,81 @@ input_params = {
 		"type":"text",
 		"element_id":"price",
 		"value":"213"
+	},
+	{
+		"type":"dropdown",
+		"element_id":"area",
+		"value":"628"
+	},
+	{
+		"type":"text",
+		"element_id":"name",
+		"value":"kamal"
+	},
+	{
+		"type":"text",
+		"element_id":"email",
+		"value":"kamal.arieff@gmail.com"
+	},
+	{
+		"type":"text",
+		"element_id":"phone",
+		"value":"0129500092"
+	},
+	{
+		"type":"text",
+		"element_id":"passwd",
+		"value":"123123"
+	},
+	{
+		"type":"text",
+		"element_id":"passwd_ver",
+		"value":"123123"
+	},
+	{
+		"type":"button",
+		"element_id":"c_publish"
+	},
+	{
+		"type":"button",
+		"element_id":"photo-notification-btn-no"
+	}
+	],
+	"inputs_with_springcleaning":[
+	{
+		"type":"dropdown",
+		"element_id":"category_group",
+		"value":"4180"
+	},
+	{
+		"type":"dropdown",
+		"element_id":"bag_type",
+		"value":"1"
+	},
+	{
+		"type":"dropdown",
+		"element_id":"gender_type",
+		"value":"1"
+	},
+	{
+		"type":"text",
+		"element_id":"subject",
+		"value":"test using json have springcleaning"
+	},
+	{
+		"type":"text",
+		"element_id":"body",
+		"value":"test using json body"
+	},
+	{
+		"type":"text",
+		"element_id":"price",
+		"value":"213"
+	},
+	{
+		"type":"checkbox",
+		"element_id":"springcleaning",
+		"value":"1"
 	},
 	{
 		"type":"dropdown",
