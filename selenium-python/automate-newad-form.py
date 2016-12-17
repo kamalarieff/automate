@@ -50,10 +50,11 @@ element.send_keys("123123")
 driver.find_element_by_id("c_publish").click()
 
 try:
-	element = WebDriverWait(driver, 10).until(
-		EC.presence_of_element_located((By.ID, "photo-notification-btn-no"))
+	element = WebDriverWait(driver, 60).until(
+		EC.element_to_be_clickable((By.ID, "photo-notification-btn-no"))
 	)
 finally:
+	print 'Did not find element'
 	driver.quit()
 
 driver.find_element_by_id("photo-notification-btn-no").click()
