@@ -5,7 +5,12 @@ driver = get_driver()
 select = Select(driver.find_element_by_id("category_group"))
 select.select_by_value("4180")
 
-driver.implicitly_wait(10)
+try:
+	element = WebDriverWait(driver, 10).until(
+		EC.element_to_be_clickable((By.ID, "bag_type"))
+	)
+finally:
+	print 'Did not find element1'
 
 select = Select(driver.find_element_by_id("bag_type"))
 select.select_by_value("1")
@@ -43,7 +48,7 @@ element.send_keys("123123")
 driver.find_element_by_id("c_publish").click()
 
 try:
-	element = WebDriverWait(driver, 100000).until(
+	element = WebDriverWait(driver, 10).until(
 		EC.element_to_be_clickable((By.ID, "photo-notification-btn-no"))
 	)
 finally:
