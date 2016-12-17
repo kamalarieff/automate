@@ -1,13 +1,6 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from common import *
 
-driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-driver.get("http://regress.mudah.my:31004/ai/form/0?ca=9_s")
+driver = get_driver()
 
 select = Select(driver.find_element_by_id("category_group"))
 select.select_by_value("4180")
@@ -21,7 +14,7 @@ select = Select(driver.find_element_by_id("gender_type"))
 select.select_by_value("1")
 
 element = driver.find_element_by_id("subject")
-element.send_keys("test using selenium subject 2")
+element.send_keys("test using selenium subject 6")
 
 element = driver.find_element_by_id("body")
 element.send_keys("test using selenium body")
@@ -50,12 +43,11 @@ element.send_keys("123123")
 driver.find_element_by_id("c_publish").click()
 
 try:
-	element = WebDriverWait(driver, 60).until(
+	element = WebDriverWait(driver, 100000).until(
 		EC.element_to_be_clickable((By.ID, "photo-notification-btn-no"))
 	)
 finally:
 	print 'Did not find element'
-	driver.quit()
 
 driver.find_element_by_id("photo-notification-btn-no").click()
 driver.quit()
