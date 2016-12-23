@@ -6,6 +6,11 @@
 		"value":"4180"
 	},
 	{
+		"type":"image",
+		"element_id":"image_0",
+		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
+	},
+	{
 		"type":"dropdown",
 		"element_id":"bag_type",
 		"value":"1"
@@ -18,7 +23,7 @@
 	{
 		"type":"text",
 		"element_id":"subject",
-		"value":"test using json no springcleaning"
+		"value":"kamal arieff"
 	},
 	{
 		"type":"text",
@@ -63,10 +68,6 @@
 	{
 		"type":"button",
 		"element_id":"c_publish"
-	},
-	{
-		"type":"button",
-		"element_id":"photo-notification-btn-no"
 	}
 	],
 	"inputs_with_springcleaning":[
@@ -74,6 +75,11 @@
 		"type":"dropdown",
 		"element_id":"category_group",
 		"value":"4180"
+	},
+	{
+		"type":"image",
+		"element_id":"image_0",
+		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
 	},
 	{
 		"type":"dropdown",
@@ -88,7 +94,7 @@
 	{
 		"type":"text",
 		"element_id":"subject",
-		"value":"test using json have springcleaning"
+		"value":"ahmad faizel"
 	},
 	{
 		"type":"text",
@@ -138,10 +144,6 @@
 	{
 		"type":"button",
 		"element_id":"c_publish"
-	},
-	{
-		"type":"button",
-		"element_id":"photo-notification-btn-no"
 	}
 	]
 }
