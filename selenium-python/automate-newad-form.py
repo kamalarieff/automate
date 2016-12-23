@@ -1,9 +1,17 @@
 from common import *
-from test import input_params
-import json
 
-with open('test.json') as data_file:    
-    data = json.load(data_file)
+try:
+	filename = str(sys.argv[1])
+except IndexError:
+	print 'No input file'
+	sys.exit(2)
+	
+if not os.path.isfile(filename):
+	print 'Not a valid input file'
+	sys.exit(2)
+
+with open(filename) as data_file:	
+	data = json.load(data_file)
 
 for k,v in data.items():
 	print k 
@@ -25,4 +33,4 @@ for k,v in data.items():
 		elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
 			driver.find_element_by_id(str(i["element_id"])).click()
 		
-	# driver.quit()
+	driver.quit()
