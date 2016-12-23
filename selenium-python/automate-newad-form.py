@@ -1,9 +1,11 @@
 from common import *
 from test import input_params
+import json
 
-# driver = get_driver()
+with open('test.json') as data_file:    
+    data = json.load(data_file)
 
-for k,v in input_params.items():
+for k,v in data.items():
 	print k 
 	driver = get_driver()
 	for i in v:
