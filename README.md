@@ -25,7 +25,7 @@ $ sudo pip install selenium
 ### Running the script
 
 ```sh
-$ python automate-newad-form.py
+$ python automate-newad-form.py <inputfile>.json
 ```
 
 ## Helpful references
