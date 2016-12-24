@@ -1,17 +1,26 @@
 from common import *
 
+def print_usage():
+	print 'usage: python {} <inputfile>.json'.format(__file__)
+	sys.exit(2)
+
 try:
 	filename = str(sys.argv[1])
 except IndexError:
-	print 'No input file'
-	sys.exit(2)
+	print 'ERROR: No input file'
+	print_usage()
 	
 if not os.path.isfile(filename):
-	print 'Not a valid input file'
-	sys.exit(2)
+	print 'ERROR: Not a file. JSON file needed'
+	print_usage()
 
 with open(filename) as data_file:	
-	data = json.load(data_file)
+	try:
+		data = json.load(data_file)
+	except ValueError:
+		print 'ERROR: Not a JSON file'
+		print_usage()
+
 
 for k,v in data.items():
 	print k 
