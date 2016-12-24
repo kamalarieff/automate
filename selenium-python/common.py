@@ -6,8 +6,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import json, sys, getopt, os.path
+import config as CONFIG
 
 def get_driver():
 	driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-	driver.get("http://regress.mudah.my:31004/ai/form/0?ca=9_s")
+	driver.get(CONFIG.NEWAD_URL)
 	return driver
