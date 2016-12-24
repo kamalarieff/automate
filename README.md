@@ -17,10 +17,18 @@ $ sudo pip install selenium
 
 ## How to run
 
+### Activate your virtualenv
+
+```sh
+$ source ~/virtualenv/bin/activate
+```
+
+* The path might be different on your system. It depends where you installed virtualenv
+
 ### Setup
 
 * Change your url in common.py
-* Change your values in test.py
+* Create a new json file with all the input params. See springcleaning.json for example.
 
 ### Running the script
 
