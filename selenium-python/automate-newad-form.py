@@ -26,7 +26,7 @@ with open(filename) as data_file:
 for k,v in data.items():
 	print k 
 	if k in "config":
-		driver = get_driver()
+		driver = get_driver(v[0]["url"])
 	else:
 		for i in v:
 			try:

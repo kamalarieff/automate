@@ -8,7 +8,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import json, sys, getopt, os.path
 import config as CONFIG
 
-def get_driver():
+def get_driver(url):
 	driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-	driver.get(CONFIG.NEWAD_URL)
+	driver.get(url)
 	return driver
