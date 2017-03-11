@@ -29,19 +29,46 @@ for k,v in data.items():
 		driver = get_driver(v[0]["url"])
 	else:
 		for i in v:
-			try:
-				if (str(i["type"]) not in "image"):
-					element = WebDriverWait(driver, 60).until(
-						EC.element_to_be_clickable((By.ID, str(i["element_id"])))
-					)
-			finally:
-				print 'Did not find element'
+			if 'element_id' in i:
+				try:
+					if (str(i["type"]) not in "image"):
+						element = WebDriverWait(driver, 60).until(
+							EC.element_to_be_clickable((By.ID, str(i["element_id"])))
+						)
+				finally:
+					print 'Did not find element'
 
-			if (str(i["type"]) == "dropdown"):
-				select = Select(driver.find_element_by_id(str(i["element_id"])))
-				select.select_by_value(str(i["value"]))
-			elif (str(i["type"]) in ["text", "image"]):
-				element = driver.find_element_by_id(str(i["element_id"]))
-				element.send_keys(str(i["value"]))
-			elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
-				driver.find_element_by_id(str(i["element_id"])).click()
+				if (str(i["type"]) == "dropdown"):
+					select = Select(driver.find_element_by_id(str(i["element_id"])))
+					select.select_by_value(str(i["value"]))
+				elif (str(i["type"]) in ["text", "image"]):
+					element = driver.find_element_by_id(str(i["element_id"]))
+					element.send_keys(str(i["value"]))
+				elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
+					driver.find_element_by_id(str(i["element_id"])).click()
+			elif 'element_name' in i:
+				try:
+					if (str(i["type"]) not in "image"):
+						element = WebDriverWait(driver, 60).until(
+							EC.element_to_be_clickable((By.NAME, str(i["element_name"])))
+						)
+				finally:
+					print 'Did not find element'
+
+				if (str(i["type"]) == "dropdown"):
+					select = Select(driver.find_element_by_name(str(i["element_name"])))
+					select.select_by_value(str(i["value"]))
+				elif (str(i["type"]) in ["text", "image"]):
+					element = driver.find_element_by_name(str(i["element_name"]))
+					element.send_keys(str(i["value"]))
+				elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
+					driver.find_element_by_name(str(i["element_name"])).click()
+			elif 'element_class' in i:
+				if (str(i["type"]) == "dropdown"):
+					select = Select(driver.find_element_by_class_name(str(i["element_class"])))
+					select.select_by_value(str(i["value"]))
+				elif (str(i["type"]) in ["text", "image"]):
+					element = driver.find_element_by_class_name(str(i["element_class"]))
+					element.send_keys(str(i["value"]))
+				elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
+					driver.find_element_by_class_name(str(i["element_class"])).click()
