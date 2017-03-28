@@ -22,6 +22,28 @@
 	{
 		"type":"link",
 		"element_link":"Profile"
+	},
+	{
+		"type":"text",
+		"element_id":"user_name",
+		"clear":"true",
+		"value":"Yoghirt"
+	},
+	{
+		"type":"text",
+		"element_id":"address2",
+		"clear":"true",
+		"value":"23, Jalan USJ 2/4H"
+	},
+	{
+		"type":"text",
+		"element_id":"zipcode",
+		"clear":"true",
+		"value":"47600"
+	},
+	{
+		"type":"button",
+		"element_id":"store-profile-update-button"
 	}
 	]
 }

@@ -43,6 +43,8 @@ for k,v in data.items():
 					select.select_by_value(str(i["value"]))
 				elif (str(i["type"]) in ["text", "image"]):
 					element = driver.find_element_by_id(str(i["element_id"]))
+					if 'clear' in i:
+						element.clear()
 					element.send_keys(str(i["value"]))
 				elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
 					driver.find_element_by_id(str(i["element_id"])).click()
