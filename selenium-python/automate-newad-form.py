@@ -72,3 +72,7 @@ for k,v in data.items():
 					element.send_keys(str(i["value"]))
 				elif (str(i["type"]) == "button" or (str(i["type"]) == "checkbox" and str(i["value"]) == "1")):
 					driver.find_element_by_class_name(str(i["element_class"])).click()
+			elif 'element_link' in i:
+				if (str(i["type"]) == "link"):
+					print 'in here1'
+					driver.find_element_by_link_text(str(i["element_link"])).click()
