@@ -76,5 +76,8 @@ for k,v in data.items():
 					driver.find_element_by_class_name(str(i["element_class"])).click()
 			elif 'element_link' in i:
 				if (str(i["type"]) == "link"):
-					print 'in here1'
-					driver.find_element_by_link_text(str(i["element_link"])).click()
+					if 'multiple' in i:
+						list = driver.find_elements_by_link_text(str(i["element_link"]))
+						list[int(i["multiple"])].click()
+					else:
+						driver.find_element_by_link_text(str(i["element_link"])).click()
