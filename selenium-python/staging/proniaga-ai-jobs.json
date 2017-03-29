@@ -180,7 +180,7 @@
 	},
 	{
 		"type":"button",
-		"element_class":"c_publish"
+		"element_id":"c_publish"
 	}
 	]
 }
