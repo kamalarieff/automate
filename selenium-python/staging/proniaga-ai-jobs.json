@@ -144,7 +144,11 @@
 	},
 	{
 		"type":"button",
-		"element_xpath":"//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[text()='31']"
+		"element_xpath":"//span[text()='Next']"
+	},
+	{
+		"type":"button",
+		"element_xpath":"//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[text()='1']"
 	},
 	{
 		"type":"dropdown",
