@@ -139,6 +139,14 @@
 		"value":"1"
 	},
 	{
+		"type":"button",
+		"element_id":"due_date"
+	},
+	{
+		"type":"button",
+		"element_xpath":"//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[text()='31']"
+	},
+	{
 		"type":"dropdown",
 		"element_id":"region",
 		"value":"9"
