@@ -39,14 +39,14 @@ for k,v in data.items():
 					element.send_keys(str(i["value"]))
 			if 'element_name' in i:
 				element = str(i["element_name"])
+				temp = 'element_name'.split("_")
 				try:
 					if (str(i["type"]) not in "image"):
 						WebDriverWait(driver, 60).until(
-							EC.element_to_be_clickable((By.NAME, element))
+							EC.element_to_be_clickable((getattr(By,	temp[1].upper()), element))
 						)
 				finally:
 					print 'Did not find element'
-				temp = 'element_name'.split("_")
 				if (str(i["type"]) in ["text", "image"]):
 					temp1 = 'find_element_by_'+ temp[1]
 					element = getattr(driver, temp1)(element)
