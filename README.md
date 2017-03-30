@@ -27,8 +27,7 @@ $ source ~/virtualenv/bin/activate
 
 ### Setup
 
-* Change your url in common.py
-* Create a new json file with all the input params. See springcleaning.json for example.
+* Create a new json file with all the input params. See any files in the staging folder for example.
 
 ### Running the script
 
