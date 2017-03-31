@@ -37,6 +37,18 @@ for k,v in data.items():
 					)
 			finally:
 				print 'Did not find element'
-			if (str(i["type"]) in ["text", "image"]):
+			if (str(i["type"]) == "dropdown"):
+				select = Select(getattr(driver, 'find_element')(getattr(By, str(i["element"])), element))
+				select.select_by_value(str(i["value"]))
+			elif (str(i["type"]) in ["text", "image"]):
 				element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), element)
+				if 'clear' in i:
+					element.clear()
 				element.send_keys(str(i["value"]))
+			elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
+				if 'multiple' in i:
+					list = getattr(driver, 'find_elements')(getattr(By, str(i["element"])), element)
+					list[int(i["multiple"])].click()
+				else:
+					element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), element)
+					element.click()
