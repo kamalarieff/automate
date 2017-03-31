@@ -29,25 +29,14 @@ for k,v in data.items():
 		driver = get_driver(v[0]["url"])
 	else:
 		for i in v:
-			if 'element_id' in i:
-				temp = 'element_id'.split("_")
-				if (str(i["type"]) in ["text", "image"]):
-					temp1 = 'find_element_by_'+ temp[1]
-					element = getattr(driver, temp1)(str(i["element_id"]))
-					if 'clear' in i:
-						element.clear()
-					element.send_keys(str(i["value"]))
-			if 'element_name' in i:
-				element = str(i["element_name"])
-				temp = 'element_name'.split("_")
-				try:
-					if (str(i["type"]) not in "image"):
-						WebDriverWait(driver, 60).until(
-							EC.element_to_be_clickable((getattr(By,	temp[1].upper()), element))
-						)
-				finally:
-					print 'Did not find element'
-				if (str(i["type"]) in ["text", "image"]):
-					temp1 = 'find_element_by_'+ temp[1]
-					element = getattr(driver, temp1)(element)
-					element.send_keys(str(i["value"]))
+			element = str(i["attr"])
+			try:
+				if (str(i["type"]) not in "image"):
+					WebDriverWait(driver, 60).until(
+						EC.element_to_be_clickable((getattr(By,	str(i["element"])), element))
+					)
+			finally:
+				print 'Did not find element'
+			if (str(i["type"]) in ["text", "image"]):
+				element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), element)
+				element.send_keys(str(i["value"]))
