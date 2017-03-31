@@ -31,6 +31,8 @@ for k,v in data.items():
 		for i in v:
 			print "Asserting %s in page" % (i["value"])
 			assert str(i["value"]) in driver.page_source
+	elif k in 'browser':
+		driver.get(str(v[0]["url"]))
 	else:
 		for i in v:
 			attr = str(i["attr"])

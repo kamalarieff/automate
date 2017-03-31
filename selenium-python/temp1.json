@@ -88,11 +88,11 @@
 		"element":"ID",
 		"attr":"passwd_ver",
 		"value":"123123"
-	},
+	}
+	],
+	"browser":[
 	{
-		"type":"button",
-		"element":"ID",
-		"attr":"preview_ad"
+		"url":"https://www.facebook.com"
 	}
 	],
 	"assert":[
