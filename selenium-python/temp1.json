@@ -1,7 +1,8 @@
 {
 	"config":[
 	{
-		"url":"http://regress.mudah.my:31004/ai/form/0?ca=9_s"
+		"url":"http://regress.mudah.my:31004/ai/form/0?ca=9_s",
+		"repeat":"2"
 	}
 	],
 	"1":[
@@ -88,31 +89,6 @@
 		"element":"ID",
 		"attr":"passwd_ver",
 		"value":"123123"
-	}
-	],
-	"browser":[
-	{
-		"url":"https://www.facebook.com"
-	}
-	],
-	"assert":[
-	{
-		"value":"kamal.arieff@gmail.com"
-	},
-	{
-		"value":"Kamal"
-	}
-	],
-	"2":[
-	{
-		"type":"button",
-		"element":"ID",
-		"attr":"edit2"
-	},
-	{
-		"type":"button",
-		"element":"ID",
-		"attr":"c_publish"
 	}
 	]
 }
