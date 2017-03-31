@@ -46,7 +46,7 @@ for k,v in data.items():
 						WebDriverWait(driver[index], 60).until(
 							EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
 						)
-				finally:
+				except:
 					print 'Did not find element'
 
 				element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
