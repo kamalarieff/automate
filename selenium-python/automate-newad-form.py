@@ -27,6 +27,10 @@ for k,v in data.items():
 	print k 
 	if k in "config":
 		driver = get_driver(v[0]["url"])
+	elif k in 'assert':
+		for i in v:
+			print "Asserting %s in page" % (i["value"])
+			assert str(i["value"]) in driver.page_source
 	else:
 		for i in v:
 			attr = str(i["attr"])

@@ -92,6 +92,26 @@
 	{
 		"type":"button",
 		"element":"ID",
+		"attr":"preview_ad"
+	}
+	],
+	"assert":[
+	{
+		"value":"kamal.arieff@gmail.com"
+	},
+	{
+		"value":"Kamal"
+	}
+	],
+	"2":[
+	{
+		"type":"button",
+		"element":"ID",
+		"attr":"edit2"
+	},
+	{
+		"type":"button",
+		"element":"ID",
 		"attr":"c_publish"
 	}
 	]
