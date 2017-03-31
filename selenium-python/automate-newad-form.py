@@ -29,26 +29,26 @@ for k,v in data.items():
 		driver = get_driver(v[0]["url"])
 	else:
 		for i in v:
-			element = str(i["attr"])
+			attr = str(i["attr"])
 			try:
 				if (str(i["type"]) not in "image"):
 					WebDriverWait(driver, 60).until(
-						EC.element_to_be_clickable((getattr(By,	str(i["element"])), element))
+						EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
 					)
 			finally:
 				print 'Did not find element'
+
+			element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), attr)
 			if (str(i["type"]) == "dropdown"):
-				select = Select(getattr(driver, 'find_element')(getattr(By, str(i["element"])), element))
+				select = Select(element)
 				select.select_by_value(str(i["value"]))
 			elif (str(i["type"]) in ["text", "image"]):
-				element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), element)
 				if 'clear' in i:
 					element.clear()
 				element.send_keys(str(i["value"]))
-			elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
+			elif (str(i["type"]) in ["button","checkbox"]):
 				if 'multiple' in i:
-					list = getattr(driver, 'find_elements')(getattr(By, str(i["element"])), element)
+					list = getattr(driver, 'find_elements')(getattr(By, str(i["element"])), attr)
 					list[int(i["multiple"])].click()
 				else:
-					element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), element)
 					element.click()
