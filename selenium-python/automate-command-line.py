@@ -3,9 +3,8 @@ from collections import OrderedDict
 import getopt
 
 def print_usage():
-	print 'usage: python {} <inputfile>.json'.format(__file__)
+	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
 	sys.exit(2)
-
 
 def main(argv):
 	try:
@@ -14,27 +13,45 @@ def main(argv):
 		print 'ERROR: No input file'
 		print_usage()
 	except getopt.GetoptError:
-		print 'test.py -i <inputfile> -o <outputfile>'
-		sys.exit(2)
+		print 'Unsupported argument'
+		print_usage()
+
+	if len(opts) == 0:
+		print_usage()
 
 	for opt, arg in opts:
 		if opt == '-h':
-			print 'test.py -i <inputfile> -o <outputfile>'
 			print_usage()
-			sys.exit()
 		elif opt in ("-c", "--config"):
 			config = arg
 			print 'Config file is ', config
 		elif opt in ("-i", "--input"):
-			filename = arg
-			print 'Input file is ', filename
+			files = arg.split(",")
+			print 'Input file is ', files
 
-def test():
-	if not os.path.isfile(filename):
+	test(config, files)
+
+def test(config, filename):
+	if not os.path.isfile(config):
 		print 'ERROR: Not a file. JSON file needed'
 		print_usage()
 
-	with open(filename) as data_file:	
+	with open(config) as config_file:	
+		try:
+			data = json.load(config_file, object_pairs_hook=OrderedDict)
+		except:
+			print 'ERROR: Not a JSON file'
+			print_usage()
+
+		for k,v in data.items():
+			print 'k: ', k
+			print 'url: ', v[0]["url"]
+			print 'repeat: ', v[0]["repeat"]
+			# repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+			# driver = []
+
+def test1():
+	with open(filename) as data_file:
 		try:
 			data = json.load(data_file, object_pairs_hook=OrderedDict)
 		except ValueError:
