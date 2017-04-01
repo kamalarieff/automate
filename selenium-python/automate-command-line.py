@@ -31,8 +31,8 @@ def main(argv):
 			print 'data url: ', data_obj.url
 			print 'data repeat: ', data_obj.repeat
 		elif opt in ("-i", "--input"):
-			files = arg.split(",")
-			print 'Input file is ', files
+			data_obj.set_input(arg)
+			print 'Input file is ', data_obj.input
 
 	# test(config, files)
 
