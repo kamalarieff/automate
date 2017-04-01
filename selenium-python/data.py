@@ -22,11 +22,8 @@ class Data:
 			data = check_json_file(config_file)
 
 			for k,v in data.items():
-				print 'k: ', k
-				print 'url: ', v[0]["url"]
-				print 'repeat: ', v[0]["repeat"]
 				Data.url = v[0]["url"]
-				Data.repeat = v[0]["repeat"]
+				Data.repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 	
 	def set_input(self, files):
 		files = files.split(",")
@@ -35,12 +32,6 @@ class Data:
 		for i in files:
 			with open(i) as input_file:
 				data = check_json_file(input_file)
-				print 'input_file: ', input_file
-				print 'i: ', i
-				print 'data: ', data
 				Data.input.append(data)
 
-				for k,v in data.items():
-					print 'k: ', k
-					print 'v: ', v
 			# print i

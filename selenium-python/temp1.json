@@ -1,10 +1,4 @@
 {
-	"config":[
-	{
-		"url":"http://regress.mudah.my:31004/ai/form/0?ca=9_s",
-		"repeat":"2"
-	}
-	],
 	"1":[
 	{
 		"type":"dropdown",

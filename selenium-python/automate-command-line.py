@@ -26,15 +26,11 @@ def main(argv):
 			print_usage()
 		elif opt in ("-c", "--config"):
 			data_obj.set_config(arg)
-			config = arg
-			print 'Config file is ', config
-			print 'data url: ', data_obj.url
-			print 'data repeat: ', data_obj.repeat
 		elif opt in ("-i", "--input"):
 			data_obj.set_input(arg)
-			print 'Input file is ', data_obj.input
 
 	# test(config, files)
+	test2(data_obj)
 
 def test(config, filename):
 	if not os.path.isfile(config):
@@ -54,6 +50,48 @@ def test(config, filename):
 			print 'repeat: ', v[0]["repeat"]
 			# repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 			# driver = []
+
+def test2(data_obj):
+	driver = []
+	for data in data_obj.input:
+		for k,v in data.items():
+			print k
+
+			for index in range(0, data_obj.repeat):
+				driver.append(get_driver(data_obj.url))
+				if k in 'assert':
+					for i in v:
+						print "Asserting %s in page" % (i["value"])
+						assert str(i["value"]) in driver[index].page_source
+				elif k in 'browser':
+					driver[index].get(str(v[0]["url"]))
+				else:
+					for i in v:
+						if 'wait' in i:
+							time.sleep(int(i["wait"]))
+						attr = str(i["attr"])
+						try:
+							if (str(i["type"]) not in "image"):
+								WebDriverWait(driver[index], 60).until(
+									EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
+								)
+						except:
+							print 'Did not find element'
+
+						element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
+						if (str(i["type"]) == "dropdown"):
+							select = Select(element)
+							select.select_by_value(str(i["value"]))
+						elif (str(i["type"]) in ["text", "image"]):
+							if 'clear' in i:
+								element.clear()
+							element.send_keys(str(i["value"]))
+						elif (str(i["type"]) in ["button","checkbox","link"]):
+							if 'multiple' in i:
+								list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
+								list[int(i["multiple"])].click()
+							else:
+								element.click()
 
 def test1():
 	with open(filename) as data_file:
