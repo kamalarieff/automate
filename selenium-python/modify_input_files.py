@@ -1,18 +1,19 @@
 from __future__ import print_function
 
+def add_json_entry(w, line, element):
+	num_tab = len(line) - len(line.lstrip('\t'))
+	tab = '\t'*num_tab
+	new_string = element.split('_')
+	new_string = new_string[1].upper()
+	temp = tab + "\"element\":\"" + new_string + "\",\n"
+	w.write(temp)
+	return line.replace(element,"attr")
+
 w = open('test.json', 'w')
 with open('staging/ai-cars-images.json', 'r') as f:
 	for line in f:
 		if 'element_id' in line:
-			num_tab = len(line) - len(line.lstrip('\t'))
-			tab = '\t'*num_tab
-			temp = tab+"\"element\":\"ID\",\n"
-			w.write(temp)
-			line = line.replace("element_id","attr")
+			line = add_json_entry(w,line, element = 'element_id')
 		elif 'element_name' in line:
-			num_tab = len(line) - len(line.lstrip('\t'))
-			tab = '\t'*num_tab
-			temp = tab+"\"element\":\"NAME\",\n"
-			w.write(temp)
-			line = line.replace("element_name","attr")
+			line = add_json_entry(w,line, element = 'element_name')
 		w.write(line)
