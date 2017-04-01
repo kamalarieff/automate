@@ -26,83 +26,42 @@ with open(filename) as data_file:
 for k,v in data.items():
 	print k 
 	if k in "config":
-		driver = get_driver(v[0]["url"])
-	else:
-		for i in v:
-			if 'element_id' in i:
+		repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+		driver = []
+
+	for index in range(0, repeat):
+		if k in "config":
+			driver.append(get_driver(v[0]["url"]))
+		elif k in 'assert':
+			for i in v:
+				print "Asserting %s in page" % (i["value"])
+				assert str(i["value"]) in driver[index].page_source
+		elif k in 'browser':
+			driver[index].get(str(v[0]["url"]))
+		else:
+			for i in v:
+				if 'wait' in i:
+					time.sleep(int(i["wait"]))
+				attr = str(i["attr"])
 				try:
 					if (str(i["type"]) not in "image"):
-						element = WebDriverWait(driver, 60).until(
-							EC.element_to_be_clickable((By.ID, str(i["element_id"])))
+						WebDriverWait(driver[index], 60).until(
+							EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
 						)
-				finally:
+				except:
 					print 'Did not find element'
 
+				element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
 				if (str(i["type"]) == "dropdown"):
-					select = Select(driver.find_element_by_id(str(i["element_id"])))
+					select = Select(element)
 					select.select_by_value(str(i["value"]))
 				elif (str(i["type"]) in ["text", "image"]):
-					element = driver.find_element_by_id(str(i["element_id"]))
 					if 'clear' in i:
 						element.clear()
 					element.send_keys(str(i["value"]))
-				elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
+				elif (str(i["type"]) in ["button","checkbox","link"]):
 					if 'multiple' in i:
-						list = driver.find_elements_by_id(str(i["element_id"]))
+						list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
 						list[int(i["multiple"])].click()
 					else:
-						driver.find_element_by_id(str(i["element_id"])).click()
-			elif 'element_name' in i:
-				try:
-					if (str(i["type"]) not in "image"):
-						element = WebDriverWait(driver, 60).until(
-							EC.element_to_be_clickable((By.NAME, str(i["element_name"])))
-						)
-				finally:
-					print 'Did not find element'
-
-				if (str(i["type"]) == "dropdown"):
-					select = Select(driver.find_element_by_name(str(i["element_name"])))
-					select.select_by_value(str(i["value"]))
-				elif (str(i["type"]) in ["text", "image"]):
-					element = driver.find_element_by_name(str(i["element_name"]))
-					element.send_keys(str(i["value"]))
-				elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
-					if 'multiple' in i:
-						list = driver.find_elements_by_name(str(i["element_name"]))
-						list[int(i["multiple"])].click()
-					else:
-						driver.find_element_by_name(str(i["element_name"])).click()
-			elif 'element_xpath' in i:
-				if (str(i["type"]) == "dropdown"):
-					select = Select(driver.find_element_by_xpath(str(i["element_xpath"])))
-					select.select_by_value(str(i["value"]))
-				elif (str(i["type"]) in ["text", "image"]):
-					element = driver.find_element_by_xpath(str(i["element_xpath"]))
-					element.send_keys(str(i["value"]))
-				elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
-					if 'multiple' in i:
-						list = driver.find_elements_by_xpath(str(i["element_xpath"]))
-						list[int(i["multiple"])].click()
-					else:
-						driver.find_element_by_xpath(str(i["element_xpath"])).click()
-			elif 'element_class' in i:
-				if (str(i["type"]) == "dropdown"):
-					select = Select(driver.find_element_by_class_name(str(i["element_class"])))
-					select.select_by_value(str(i["value"]))
-				elif (str(i["type"]) in ["text", "image"]):
-					element = driver.find_element_by_class_name(str(i["element_class"]))
-					element.send_keys(str(i["value"]))
-				elif (str(i["type"]) == "button" or str(i["type"]) == "checkbox"):
-					if 'multiple' in i:
-						list = driver.find_element_by_class_name(str(i["element_class"]))
-						list[int(i["multiple"])].click()
-					else:
-						driver.find_element_by_class_name(str(i["element_class"])).click()
-			elif 'element_link' in i:
-				if (str(i["type"]) == "link"):
-					if 'multiple' in i:
-						list = driver.find_elements_by_link_text(str(i["element_link"]))
-						list[int(i["multiple"])].click()
-					else:
-						driver.find_element_by_link_text(str(i["element_link"])).click()
+						element.click()
