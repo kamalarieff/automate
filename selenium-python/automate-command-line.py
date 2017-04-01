@@ -1,6 +1,7 @@
 from common import *
 from collections import OrderedDict
 import getopt
+from data import *
 
 def print_usage():
 	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
@@ -19,17 +20,21 @@ def main(argv):
 	if len(opts) == 0:
 		print_usage()
 
+	data_obj = Data()
 	for opt, arg in opts:
 		if opt == '-h':
 			print_usage()
 		elif opt in ("-c", "--config"):
+			data_obj.set_config(arg)
 			config = arg
 			print 'Config file is ', config
+			print 'data url: ', data_obj.url
+			print 'data repeat: ', data_obj.repeat
 		elif opt in ("-i", "--input"):
 			files = arg.split(",")
 			print 'Input file is ', files
 
-	test(config, files)
+	# test(config, files)
 
 def test(config, filename):
 	if not os.path.isfile(config):
