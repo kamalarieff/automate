@@ -40,6 +40,8 @@ for k,v in data.items():
 			driver[index].get(str(v[0]["url"]))
 		else:
 			for i in v:
+				if 'wait' in i:
+					time.sleep(int(i["wait"]))
 				attr = str(i["attr"])
 				try:
 					if (str(i["type"]) not in "image"):
@@ -57,7 +59,7 @@ for k,v in data.items():
 					if 'clear' in i:
 						element.clear()
 					element.send_keys(str(i["value"]))
-				elif (str(i["type"]) in ["button","checkbox"]):
+				elif (str(i["type"]) in ["button","checkbox","link"]):
 					if 'multiple' in i:
 						list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
 						list[int(i["multiple"])].click()
