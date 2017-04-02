@@ -1,23 +1,6 @@
 {
 	"1":[
 	{
-		"type":"text",
-		"element":"NAME",
-		"attr":"username",
-		"value":"jobsnew1@gmail.com"
-	},
-	{
-		"type":"text",
-		"element":"NAME",
-		"attr":"passwd",
-		"value":"ten20304050"
-	},
-	{
-		"type":"button",
-		"element":"CLASS_NAME",
-		"attr":"btn-login"
-	},
-	{
 		"type":"link",
 		"element":"LINK_TEXT",
 		"attr":"INSERT AD"
@@ -235,6 +218,11 @@
 	"assert":[
 	{
 		"value":"jobsnew1@gmail.com"
+	}
+	],
+	"browser":[
+	{
+		"url":"https://www.facebook.com"
 	}
 	]
 }
