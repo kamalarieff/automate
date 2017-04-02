@@ -20,6 +20,7 @@ except IndexError:
 
 
 w = open('temp.json', 'w')
+config = False
 with open(filename, 'r') as f:
 	for line in f:
 		if 'element_id' in line:
@@ -32,6 +33,15 @@ with open(filename, 'r') as f:
 			line = add_json_entry(w,line, element = 'element_link', new_string = 'LINK_TEXT')
 		elif 'element_xpath' in line:
 			line = add_json_entry(w,line, element = 'element_xpath', new_string = 'XPATH')
+		elif 'config' in line:
+			config = True
+
+		if config:
+			if '],' in line:
+				config = False
+			line = ''
+			
+
 		w.write(line)
 	
 os.rename('temp.json', filename)
