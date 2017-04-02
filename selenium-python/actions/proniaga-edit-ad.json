@@ -1,0 +1,27 @@
+{
+	"1":[
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"username",
+		"value":"motor01-pri@gmail.com"
+	},
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"passwd",
+		"value":"ten20304050"
+	},
+	{
+		"type":"button",
+		"element":"CLASS_NAME",
+		"attr":"btn-login"
+	},
+	{
+		"type":"link",
+		"multiple":"2",
+		"element":"LINK_TEXT",
+		"attr":"Edit"
+	}
+	]
+}
