@@ -1,0 +1,29 @@
+{
+	"browser":[
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"email",
+		"url":"http://regress.mudah.my:31004/useraccount.html?signin=1"
+	}
+	],
+	"1":[
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"email",
+		"value":"kamal.arieff@gmail.com"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"passwd",
+		"value":"123123"
+	},
+	{
+		"type":"button",
+		"element":"ID",
+		"attr":"btn_signin"
+	}
+	]
+}
