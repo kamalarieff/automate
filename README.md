@@ -317,6 +317,6 @@ $ python automate-newad-form.py <inputfile>.json
 
 ## Helpful references
 
-* [Exception AttributeError: "'Service' object has no attribute 'process'"] (https://github.com/dhruvramani/Terminal-on-FB-Messenger/issues/10)
-* [selenium.common.exceptions.WebDriverException: Message: 'ChromeDriver executable needs to be available in the path.] (http://stackoverflow.com/questions/8255929/running-webdriver-chrome-with-selenium/8259152#8259152)
+* [Exception AttributeError: "'Service' object has no attribute 'process'"](https://github.com/dhruvramani/Terminal-on-FB-Messenger/issues/10)
+* [selenium.common.exceptions.WebDriverException: Message: 'ChromeDriver executable needs to be available in the path.](http://stackoverflow.com/questions/8255929/running-webdriver-chrome-with-selenium/8259152#8259152)
 * http://selenium-python.readthedocs.io/installation.html
