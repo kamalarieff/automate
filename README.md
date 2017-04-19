@@ -312,7 +312,7 @@ $ source ~/virtualenv/bin/activate
 ### Running the script
 
 ```sh
-$ python automate-newad-form.py <inputfile>.json
+$ python automate-command-line.py -c <configfile>.json -i <inputfile>.json
 ```
 
 ## Helpful references
