@@ -1,49 +1,52 @@
 {
-	"config":[
-	{
-		"url":"https://www2.schibstedclassifiedmedia.my/store/main_login/0"
-	}
-	],
 	"1":[
 	{
 		"type":"text",
-		"element_name":"username",
+		"element":"NAME",
+		"attr":"username",
 		"value":"motor01-pri@gmail.com"
 	},
 	{
 		"type":"text",
-		"element_name":"passwd",
+		"element":"NAME",
+		"attr":"passwd",
 		"value":"ten20304050"
 	},
 	{
 		"type":"button",
-		"element_class":"btn-login"
+		"element":"CLASS_NAME",
+		"attr":"btn-login"
 	},
 	{
 		"type":"link",
-		"element_link":"Profile"
+		"element":"LINK_TEXT",
+		"attr":"Profile"
 	},
 	{
 		"type":"text",
-		"element_id":"user_name",
+		"element":"ID",
+		"attr":"user_name",
 		"clear":"true",
 		"value":"Yoghirt"
 	},
 	{
 		"type":"text",
-		"element_id":"address2",
+		"element":"ID",
+		"attr":"address2",
 		"clear":"true",
 		"value":"23, Jalan USJ 2/4H"
 	},
 	{
 		"type":"text",
-		"element_id":"zipcode",
+		"element":"ID",
+		"attr":"zipcode",
 		"clear":"true",
 		"value":"47600"
 	},
 	{
 		"type":"button",
-		"element_id":"store-profile-update-button"
+		"element":"ID",
+		"attr":"store-profile-update-button"
 	}
 	]
 }

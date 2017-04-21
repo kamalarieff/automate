@@ -1,0 +1,14 @@
+{
+	"1":[
+	{
+		"type":"link",
+		"element":"ID",
+		"attr":"search"
+	},
+	{
+		"type":"button",
+		"element":"ID",
+		"attr":"asearch-button"
+	}
+	]
+}

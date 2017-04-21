@@ -1,82 +1,92 @@
 {
-	"config":[
-	{
-		"url":"http://www2.schibstedclassifiedmedia.my/ai/form/0"
-	}
-	],
 	"1":[
 	{
 		"type":"dropdown",
-		"element_id":"category_group",
+		"element":"ID",
+		"attr":"category_group",
 		"value":"4180"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"bag_type",
+		"element":"ID",
+		"attr":"bag_type",
 		"value":"1"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"gender_type",
+		"element":"ID",
+		"attr":"gender_type",
 		"value":"1"
 	},
 	{
 		"type":"text",
-		"element_id":"subject",
+		"element":"ID",
+		"attr":"subject",
 		"value":"TEST FOR NO IMAGES IN AI"
 	},
 	{
 		"type":"text",
-		"element_id":"body",
+		"element":"ID",
+		"attr":"body",
 		"value":"TEST FOR NO IMAGES IN AI"
 	},
 	{
 		"type":"text",
-		"element_id":"price",
+		"element":"ID",
+		"attr":"price",
 		"value":"619"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"area",
+		"element":"ID",
+		"attr":"area",
 		"value":"357"
 	},
 	{
 		"type":"text",
-		"element_id":"name",
+		"element":"ID",
+		"attr":"name",
 		"value":"Kamal"
 	},
 	{
 		"type":"checkbox",
-		"element_id":"p_ad",
+		"element":"ID",
+		"attr":"p_ad",
 		"value":"1"
 	},
 	{
 		"type":"text",
-		"element_id":"email",
+		"element":"ID",
+		"attr":"email",
 		"value":"kamal.arieff@gmail.com"
 	},
 	{
 		"type":"text",
-		"element_id":"phone",
+		"element":"ID",
+		"attr":"phone",
 		"value":"0129500092"
 	},
 	{
 		"type":"text",
-		"element_id":"passwd",
+		"element":"ID",
+		"attr":"passwd",
 		"value":"123123"
 	},
 	{
 		"type":"text",
-		"element_id":"passwd_ver",
+		"element":"ID",
+		"attr":"passwd_ver",
 		"value":"123123"
 	},
 	{
 		"type":"button",
-		"element_id":"c_publish"
+		"element":"ID",
+		"attr":"c_publish"
 	},
 	{
 		"type":"button",
-		"element_id":"photo-notification-btn-no"
+		"element":"ID",
+		"attr":"photo-notification-btn-no"
 	}
 	]
 }

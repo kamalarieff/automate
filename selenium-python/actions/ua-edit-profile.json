@@ -1,0 +1,31 @@
+{
+	"browser":[
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"email",
+		"url":"http://regress.mudah.my:31004/useraccount.html?profile=1"
+	}
+	],
+	"1":[
+	{
+		"type":"button",
+		"element":"ID",
+		"attr":"btn_edit_profile"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"firstname",
+		"value":"ayy lmao",
+		"clear":"true"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"lastname",
+		"value":"yoghirt",
+		"clear":"true"
+	}
+	]
+}

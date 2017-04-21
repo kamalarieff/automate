@@ -1,38 +1,39 @@
 {
-	"config":[
-	{
-		"url":"http://www.mudah.my/malaysia/cars-for-sale"
-	}
-	],
 	"1":[
 	{
 		"type":"dropdown",
-		"element_id":"typ",
+		"element":"ID",
+		"attr":"typ",
 		"value":"2"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"mke",
+		"element":"ID",
+		"attr":"mke",
 		"value":"1"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"ms",
+		"element":"ID",
+		"attr":"ms",
 		"value":"3"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"cond",
+		"element":"ID",
+		"attr":"cond",
 		"value":"1"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"mdl",
+		"element":"ID",
+		"attr":"mdl",
 		"value":"1"
 	},
 	{
 		"type":"button",
-		"element_id":"searchbutton"
+		"element":"ID",
+		"attr":"searchbutton"
 	}
 	]
 }

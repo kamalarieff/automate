@@ -1,123 +1,142 @@
 {
-	"config":[
-	{
-		"url":"http://www2.schibstedclassifiedmedia.my/ai/form/0"
-	}
-	],
 	"1":[
 	{
 		"type":"dropdown",
-		"element_id":"category_group",
+		"element":"ID",
+		"attr":"category_group",
 		"value":"1020"
 	},
 	{
+		"wait":"2",
 		"type":"checkbox",
-		"element_id":"p_ad",
+		"element":"ID",
+		"attr":"p_ad",
 		"value":"1"
 	},
 	{
 		"type":"image",
-		"element_id":"image_0",
+		"element":"ID",
+		"attr":"image_0",
 		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
 	},
 	{
 		"type":"image",
-		"element_id":"image_1",
+		"element":"ID",
+		"attr":"image_1",
 		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
 	},
 	{
 		"type":"image",
-		"element_id":"image_2",
+		"element":"ID",
+		"attr":"image_2",
 		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"make",
+		"element":"ID",
+		"attr":"make",
 		"value":"24"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"model",
+		"element":"ID",
+		"attr":"model",
 		"value":"2333"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"car_type",
+		"element":"ID",
+		"attr":"car_type",
 		"value":"8"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"transmission",
+		"element":"ID",
+		"attr":"transmission",
 		"value":"2"
 	},
 	{
 		"type":"text",
-		"element_id":"engine_capacity",
+		"element":"ID",
+		"attr":"engine_capacity",
 		"value":"1800"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"mileage",
+		"element":"ID",
+		"attr":"mileage",
 		"value":"4"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"manufactured_date",
+		"element":"ID",
+		"attr":"manufactured_date",
 		"value":"2017"
 	},
 	{
 		"type":"checkbox",
-		"element_name":"equip12",
+		"element":"NAME",
+		"attr":"equip12",
 		"value":"1"
 	},
 	{
 		"type":"text",
-		"element_id":"body",
+		"element":"ID",
+		"attr":"body",
 		"value":"TEST FOR CAR CATEGORY ADS"
 	},
 	{
 		"type":"text",
-		"element_id":"price",
+		"element":"ID",
+		"attr":"price",
 		"value":"125000"
 	},
 	{
 		"type":"dropdown",
-		"element_id":"area",
+		"element":"ID",
+		"attr":"area",
 		"value":"357"
 	},
 	{
 		"type":"text",
-		"element_id":"name",
+		"element":"ID",
+		"attr":"name",
 		"value":"Kamal"
 	},
 	{
 		"type":"checkbox",
-		"element_id":"p_ad",
+		"element":"ID",
+		"attr":"p_ad",
 		"value":"1"
 	},
 	{
 		"type":"text",
-		"element_id":"email",
+		"element":"ID",
+		"attr":"email",
 		"value":"kamal.arieff@gmail.com"
 	},
 	{
 		"type":"text",
-		"element_id":"phone",
+		"element":"ID",
+		"attr":"phone",
 		"value":"0129500092"
 	},
 	{
 		"type":"text",
-		"element_id":"passwd",
+		"element":"ID",
+		"attr":"passwd",
 		"value":"123123"
 	},
 	{
 		"type":"text",
-		"element_id":"passwd_ver",
+		"element":"ID",
+		"attr":"passwd_ver",
 		"value":"123123"
 	},
 	{
 		"type":"button",
-		"element_id":"c_publish"
+		"element":"ID",
+		"attr":"c_publish"
 	}
 	]
 }

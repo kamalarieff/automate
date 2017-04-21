@@ -1,0 +1,26 @@
+{
+	"browser":[
+	{
+		"url":"https://www2.muddah.com/store/main_login/0"
+	}
+	],
+	"1":[
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"username",
+		"value":"jobsnew1@gmail.com"
+	},
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"passwd",
+		"value":"ten20304050"
+	},
+	{
+		"type":"button",
+		"element":"CLASS_NAME",
+		"attr":"btn-login"
+	}
+	]
+}
