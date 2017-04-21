@@ -8,7 +8,7 @@ def print_usage():
 	sys.exit(2)
 
 driver = []
-def test2(data_obj):
+def run(data_obj):
 	for index in range(0, data_obj.repeat):
 		driver.append(get_driver(data_obj.url))
 		for data in data_obj.input:
@@ -71,7 +71,7 @@ def main(argv):
 		elif opt in ("-i", "--input"):
 			data_obj.set_input(arg)
 
-	test2(data_obj)
+	run(data_obj)
 
 
 if __name__ == "__main__":
