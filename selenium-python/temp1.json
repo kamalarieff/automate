@@ -5,84 +5,54 @@
 		"element":"ID",
 		"attr":"category_group",
 		"value":"4180"
+	}
+	],
+	"mouse":[
+	{
+		"1":"click",
+		"2":{
+			"element":"ID",
+			"attr":"c_publish"
+		}
 	},
 	{
-		"type":"image",
-		"element":"ID",
-		"attr":"image_0",
-		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
+		"1":"drag_and_drop",
+		"2":{
+			"element":"ID",
+			"attr":"c_publish1"
+		},
+		"3":{
+			"element":"ID",
+			"attr":"c_publish2"
+		}
 	},
 	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"bag_type",
-		"value":"1"
+		"1":"drag_and_drop_by_offset",
+		"2":{
+			"element":"ID",
+			"attr":"c_publish1"
+		},
+		"3":{
+			"offset":"123"
+		},
+		"4":{
+			"offset":"125"
+		}
 	},
 	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"gender_type",
-		"value":"1"
+		"1":"move_by_offset",
+		"2":{
+			"offset":"123"
+		},
+		"3":{
+			"offset":"126"
+		}
 	},
 	{
-		"type":"text",
-		"element":"ID",
-		"attr":"subject",
-		"value":"TEST FOR AP1250 2"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"body",
-		"value":"TEST FOR AP1250 2"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"price",
-		"value":"619"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"area",
-		"value":"357"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"name",
-		"value":"Kamal"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"p_ad",
-		"value":"1"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"email",
-		"value":"kamal.arieff@gmail.com"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"phone",
-		"value":"0129500092"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"passwd",
-		"value":"123123"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"passwd_ver",
-		"value":"123123"
+		"1":"send_keys_to_element",
+		"2":{
+			"keys":"Key.CTRL"
+		}
 	}
 	]
 }
