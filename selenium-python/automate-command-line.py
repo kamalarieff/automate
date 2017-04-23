@@ -13,6 +13,7 @@ def run(data_obj):
 		driver.append(get_driver(data_obj.url))
 		for data in data_obj.input:
 			for k,v in data.items():
+				print 'in here'
 				print k
 				if k in 'assert':
 					for i in v:
@@ -20,6 +21,25 @@ def run(data_obj):
 						assert str(i["value"]) in driver[index].page_source
 				elif k in 'browser':
 					driver[index].get(str(v[0]["url"]))
+				elif k in 'mouse':
+					for i in v:
+						print 'mouse i: ',i
+						temp1 = []
+						for k,j in i.items():
+							print 'mouse k: ',k
+							print 'mouse j: ',j
+							if k in "action":
+								temp1.append(j)
+							elif k in "element":
+								for temp in j:
+									print 'element: ',temp
+									temp1.append(temp)
+							elif k in "offset":
+								for temp in j:
+									print 'offset: ',temp
+									temp1.append(temp)
+						for i in temp1:
+							print 'temp1: ',i
 				else:
 					for i in v:
 						print 'i: ',i

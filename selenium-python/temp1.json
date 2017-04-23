@@ -1,58 +1,38 @@
 {
-	"1":[
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"category_group",
-		"value":"4180"
-	}
-	],
 	"mouse":[
 	{
-		"1":"click",
-		"2":{
+		"action":"click",
+		"element":[{
 			"element":"ID",
 			"attr":"c_publish"
-		}
+		}]
 	},
 	{
-		"1":"drag_and_drop",
-		"2":{
+		"action":"drag_and_drop",
+		"element":[{
 			"element":"ID",
 			"attr":"c_publish1"
 		},
-		"3":{
+		{
 			"element":"ID",
 			"attr":"c_publish2"
-		}
+		}]
 	},
 	{
-		"1":"drag_and_drop_by_offset",
-		"2":{
+		"action":"drag_and_drop_by_offset",
+		"element":[{
 			"element":"ID",
 			"attr":"c_publish1"
-		},
-		"3":{
-			"offset":"123"
-		},
-		"4":{
-			"offset":"125"
-		}
+		}],
+		"offset":["123","125"]
 	},
 	{
-		"1":"move_by_offset",
-		"2":{
-			"offset":"123"
-		},
-		"3":{
-			"offset":"126"
-		}
+		"action":"move_by_offset",
+		"offset":["123","128"]
 	},
 	{
-		"1":"send_keys_to_element",
-		"2":{
-			"keys":"Key.CTRL"
-		}
+		"action":"send_keys_to_element",
+		"keys":"Key.CTRL" 
 	}
 	]
 }
