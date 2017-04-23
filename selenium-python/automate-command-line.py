@@ -24,16 +24,18 @@ def run(data_obj):
 				elif k in 'mouse':
 					for i in v:
 						print 'mouse i: ',i
+						action = None
 						temp1 = []
 						for k,j in i.items():
 							print 'mouse k: ',k
 							print 'mouse j: ',j
 							if k in "action":
-								temp1.append(j)
+								action = j
 							elif k in "element":
 								for temp in j:
 									print 'element: ',temp
-									temp1.append(temp)
+									element = getattr(driver[index], 'find_element')(getattr(By, str(temp["element"])), str(temp["attr"]))
+									temp1.append(element)
 							elif k in "offset":
 								for temp in j:
 									print 'offset: ',temp
@@ -42,8 +44,9 @@ def run(data_obj):
 								temp1.append(j)
 						print 'action: ',action
 						print 'temp1[0]: ',temp1[0]
-						# actions = ActionChains(driver[index])
-						# getattr(actions, temp1)
+						actions = ActionChains(driver[index])
+						getattr(actions, action)(*temp1)
+						actions.perform()
 						# for i in temp1:
 						# 	print 'temp1: ',i
 				else:
