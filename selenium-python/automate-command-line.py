@@ -38,8 +38,14 @@ def run(data_obj):
 								for temp in j:
 									print 'offset: ',temp
 									temp1.append(temp)
-						for i in temp1:
-							print 'temp1: ',i
+							elif k in "keys":
+								temp1.append(j)
+						print 'action: ',action
+						print 'temp1[0]: ',temp1[0]
+						# actions = ActionChains(driver[index])
+						# getattr(actions, temp1)
+						# for i in temp1:
+						# 	print 'temp1: ',i
 				else:
 					for i in v:
 						print 'i: ',i
