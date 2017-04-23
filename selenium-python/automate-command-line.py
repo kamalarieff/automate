@@ -22,6 +22,7 @@ def run(data_obj):
 				elif k in 'browser':
 					driver[index].get(str(v[0]["url"]))
 				elif k in 'mouse':
+					actions = ActionChains(driver[index])
 					for i in v:
 						print 'mouse i: ',i
 						action = None
@@ -44,11 +45,10 @@ def run(data_obj):
 								temp1.append(j)
 						print 'action: ',action
 						print 'temp1[0]: ',temp1[0]
-						actions = ActionChains(driver[index])
 						getattr(actions, action)(*temp1)
-						actions.perform()
 						# for i in temp1:
 						# 	print 'temp1: ',i
+					actions.perform()
 				else:
 					for i in v:
 						print 'i: ',i
