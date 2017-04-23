@@ -26,18 +26,18 @@ with open(filename) as data_file:
 for k,v in data.items():
 	print k 
 	if k in "config":
-		repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+		repeat = int(v["repeat"]) if 'repeat' in v else 1
 		driver = []
 
 	for index in range(0, repeat):
 		if k in "config":
-			driver.append(get_driver(v[0]["url"]))
+			driver.append(get_driver(v["url"]))
 		elif k in 'assert':
 			for i in v:
 				print "Asserting %s in page" % (i["value"])
 				assert str(i["value"]) in driver[index].page_source
 		elif k in 'browser':
-			driver[index].get(str(v[0]["url"]))
+			driver[index].get(str(v["url"]))
 		else:
 			for i in v:
 				if 'wait' in i:

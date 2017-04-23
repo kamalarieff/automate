@@ -1,8 +1,7 @@
 {
-	"config":[
-	{
+	"config":{
 		"url":"http://regress.mudah.my:31004/ai/form/0?ca=9_s",
-		"repeat":"2"
+		"repeat":"2",
+		"browser":"Firefox"
 	}
-	]
 }

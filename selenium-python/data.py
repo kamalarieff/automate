@@ -22,8 +22,9 @@ class Data:
 			data = check_json_file(config_file)
 
 			for k,v in data.items():
-				Data.url = v[0]["url"]
-				Data.repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+				Data.url = v["url"]
+				Data.repeat = int(v["repeat"]) if 'repeat' in v else 1
+				Data.browser = v["browser"]
 	
 	def set_input(self, files):
 		files = files.split(",")

@@ -10,7 +10,7 @@ def print_usage():
 driver = []
 def run(data_obj):
 	for index in range(0, data_obj.repeat):
-		driver.append(get_driver(data_obj.url))
+		driver.append(get_driver(data_obj))
 		for data in data_obj.input:
 			for k,v in data.items():
 				print k
