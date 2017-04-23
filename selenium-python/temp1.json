@@ -1,38 +1,20 @@
 {
 	"mouse":[
 	{
+		"action":"move_to_element",
+		"element":[{
+			"element":"CLASS_NAME",
+			"attr":"topbanner-myads"
+		}]
+	},
+	{
 		"action":"click",
 		"element":[{
-			"element":"ID",
-			"attr":"c_publish"
+			"element":"CLASS_NAME",
+			"attr":"dropdown-button-desc"
 		}]
-	},
-	{
-		"action":"drag_and_drop",
-		"element":[{
-			"element":"ID",
-			"attr":"c_publish1"
-		},
-		{
-			"element":"ID",
-			"attr":"c_publish2"
-		}]
-	},
-	{
-		"action":"drag_and_drop_by_offset",
-		"element":[{
-			"element":"ID",
-			"attr":"c_publish1"
-		}],
-		"offset":["123","125"]
-	},
-	{
-		"action":"move_by_offset",
-		"offset":["123","128"]
-	},
-	{
-		"action":"send_keys_to_element",
-		"keys":"Key.CTRL" 
 	}
 	]
 }
+
+
