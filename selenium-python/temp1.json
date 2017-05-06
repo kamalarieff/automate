@@ -11,7 +11,7 @@
 		"action":"click",
 		"element":[{
 			"element":"CLASS_NAME",
-			"attr":"dropdown-button-desc"
+			"attr":"dropdown-button-desc1"
 		}]
 	}
 	]
