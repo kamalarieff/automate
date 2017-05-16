@@ -4,31 +4,55 @@
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"category_group",
-		"value":"8020"
+		"value":"4180"
+	},
+	{
+		"type":"image",
+		"element":"ID",
+		"attr":"image_0",
+		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"bag_type",
+		"value":"1"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"gender_type",
+		"value":"1"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"subject",
-		"value":"TEST FOR NO IMAGES IN AI"
+		"value":"TEST FOR Bags and Wallets IN AI"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"body",
-		"value":"TEST FOR NO IMAGES IN AI"
+		"value":"Tom Bihn Synapse 19"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"price",
-		"value":"619"
+		"value":"1300"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"hariraya",
+		"value":"1"
 	},
 	{
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"area",
-		"value":"357"
+		"value":"639"
 	},
 	{
 		"type":"text",

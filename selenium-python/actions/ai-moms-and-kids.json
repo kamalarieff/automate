@@ -4,25 +4,49 @@
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"category_group",
-		"value":"8020"
+		"value":"4060"
+	},
+	{
+		"type":"image",
+		"element":"ID",
+		"attr":"image_0",
+		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_level_one",
+		"value":"1"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_level_two",
+		"value":"1"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"subject",
-		"value":"TEST FOR NO IMAGES IN AI"
+		"value":"TEST FOR MOM AND KIDS AI"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"body",
-		"value":"TEST FOR NO IMAGES IN AI"
+		"value":"TEST FOR MOM AND KIDS AI"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"price",
-		"value":"619"
+		"value":"1230"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"hariraya",
+		"value":"1"
 	},
 	{
 		"type":"dropdown",
