@@ -69,7 +69,12 @@ def main(argv):
 		elif opt in ("-c", "--config"):
 			data_obj.set_config(arg)
 		elif opt in ("-i", "--input"):
-			data_obj.set_input(arg)
+			if ',' in arg:
+				arg = arg.split(",")
+				for i in arg:
+					data_obj.set_input(i)
+			else:
+				data_obj.set_input(arg)
 
 	run(data_obj)
 
