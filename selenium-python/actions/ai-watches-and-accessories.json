@@ -4,7 +4,7 @@
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"category_group",
-		"value":"3120"
+		"value":"4040"
 	},
 	{
 		"type":"image",
@@ -15,32 +15,38 @@
 	{
 		"type":"dropdown",
 		"element":"ID",
-		"attr":"category_level_one",
+		"attr":"gender_type",
 		"value":"1"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"subject",
-		"value":"TEST FOR GAMES AND CONSOLES IN AI 2"
+		"value":"TEST FOR Watches and Accessories IN AI"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"body",
-		"value":"TEST FOR GAMES AND CONSOLES IN AI"
+		"value":"TEST FOR Watches and Accessories IN AI"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"price",
-		"value":"619"
+		"value":"1300"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"hariraya",
+		"value":"1"
 	},
 	{
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"area",
-		"value":"357"
-	}
+		"value":"639"
+	},
 	]
 }
