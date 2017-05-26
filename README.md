@@ -77,132 +77,22 @@ $ sudo pip install selenium
 		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
 	},
 	{
-		"wait":"2",
-		"type":"image",
-		"element":"ID",
-		"attr":"image_1",
-		"value":"/Users/kamalarieff/Pictures/pp.jpeg"
-	},
-	{
-		"wait":"2",
-		"type":"text",
-		"element":"ID",
-		"attr":"subject",
-		"value":"TEST FOR NEW JOB AI FORM"
-	},
-	{
 		"type":"text",
 		"element":"ID",
 		"attr":"job_summary",
 		"value":"TEST FOR NEW JOB AI FORM"
 	},
 	{
-		"type":"text",
-		"element":"ID",
-		"attr":"education",
-		"value":"TEST FOR NEW JOB AI FORM"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"nationality",
-		"value":"2"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"body",
-		"value":"TEST FOR NEW JOB AI FORM"
-	},
-	{
 		"type":"checkbox",
 		"element":"ID",
 		"attr":"language_skill",
 		"value":"1",
 		"multiple":"0"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"language_skill",
-		"value":"1",
-		"multiple":"2"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"gender_preferred",
-		"value":"2"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"own_transport",
-		"value":"2"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"own_transport",
-		"value":"TEST FOR NEW JOB AI FORM"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"job_cat",
-		"multiple":"0"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"job_cat",
-		"multiple":"4"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"job_cat",
-		"multiple":"9"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"job_type",
-		"value":"2"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"contract_type",
-		"value":"1"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"experience_offer1"
 	},
 	{
 		"type":"checkbox",
 		"element":"ID",
 		"attr":"experience_offer3"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"price_min",
-		"value":"1000"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"price",
-		"value":"3000"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"salary_type",
-		"value":"1"
 	},
 	{
 		"type":"button",
@@ -215,62 +105,10 @@ $ sudo pip install selenium
 		"attr":"//span[text()='Next']"
 	},
 	{
-		"type":"button",
-		"element":"XPATH",
-		"attr":"//table[@class='ui-datepicker-calendar']/tbody/tr/td/a[text()='1']"
-	},
-	{
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"region",
 		"value":"9"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"area",
-		"value":"397"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"company_name",
-		"value":"Yoghirt Co"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"company_desc",
-		"value":"Only the best is selled here"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"company_size",
-		"value":"7"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"company_roc",
-		"value":"Kappa123"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"website",
-		"value":"www.twitch.tv/admiralbulldog"
-	},
-	{
-		"type":"text",
-		"element":"ID",
-		"attr":"resume_email_addr",
-		"value":"ayylmao@gmail.com"
-	},
-	{
-		"type":"button",
-		"element":"ID",
-		"attr":"preview_ad"
 	}
 	],
 	"assert":[
@@ -311,9 +149,21 @@ $ source ~/virtualenv/bin/activate
 
 ### Running the script
 
+#### Only one input file
+
 ```sh
-$ python automate-command-line.py -c <configfile>.json -i <inputfile>.json
+$ python automate-command-line.py -c config_file.json -i input_file.json
 ```
+
+#### More than one input files
+##### Two ways to insert
+1. Separate by commas
+
+```$ python automate-command-line.py -c config_file.json -i input_file1.json,input_file2.json```
+
+2. Multiple -i flags
+
+```$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json```
 
 ## Helpful references
 
