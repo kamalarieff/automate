@@ -37,16 +37,10 @@
 		"value":"1300"
 	},
 	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"hariraya",
-		"value":"1"
-	},
-	{
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"area",
 		"value":"639"
-	},
+	}
 	]
 }
