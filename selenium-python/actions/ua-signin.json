@@ -1,10 +1,7 @@
 {
 	"browser":[
 	{
-		"type":"text",
-		"element":"ID",
-		"attr":"email",
-		"url":"http://regress.mudah.my:31004/useraccount.html?signin=1"
+		"url":"http://www-schibstedclassifiedmedia.mudah.my/useraccount.html?signin=1"
 	}
 	],
 	"1":[

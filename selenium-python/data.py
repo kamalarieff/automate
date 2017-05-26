@@ -13,6 +13,7 @@ def check_json_file(file):
 	return data
 
 class Data:
+	input = []
 	def set_config(self, config):
 		if not os.path.isfile(config):
 			print 'ERROR: Not a file. JSON file needed'
@@ -26,12 +27,9 @@ class Data:
 				Data.repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 	
 	def set_input(self, files):
-		files = files.split(",")
-
-		Data.input = []
-		for i in files:
-			with open(i) as input_file:
-				data = check_json_file(input_file)
-				Data.input.append(data)
+		print files
+		with open(files) as input_file:
+			data = check_json_file(input_file)
+			Data.input.append(data)
 
 			# print i
