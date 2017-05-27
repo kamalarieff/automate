@@ -1,10 +1,7 @@
 import json, os.path, sys
 from collections import OrderedDict
 from quickstart import *
-def print_usage():
-	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
-	sys.exit(2)
-
+from common import print_usage
 def check_json_file(file):
 	try:
 		data = json.load(file, object_pairs_hook=OrderedDict)
@@ -52,6 +49,7 @@ class Data:
 	def check_call_sheets_api(self):
 		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
 			print 'Either column or row is missing'
+			print_usage()
 			sys.exit(2)
 		elif self.row != "" and self.column != "":
 			return True
@@ -60,13 +58,9 @@ class Data:
 
 	def get_files_from_sheets_api(self):
 		files = call_sheets_api(self)
-		print files
 		for row in files:
 			for index, item in enumerate(row):
 				if index == 0:
 					self.set_config(item)
 				else:
 					self.set_input(item)
-
-	def temp1(self):
-		print 'temp1'

@@ -60,14 +60,4 @@ def call_sheets_api(data):
 	result = service.spreadsheets().values().get(
 		spreadsheetId=spreadsheetId, range=data.rangeName).execute()
 	values = result.get('values', [])
-
-	if not values:
-		print('No data found.')
-	else:
-		print('Name, Major:')
-		for row in values:
-			# Print columns A and E, which correspond to indices 0 and 4.
-			# print('%s', '%s' % (row[0], row[1]))
-			print(row[2])
-
 	return values
