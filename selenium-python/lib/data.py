@@ -1,5 +1,6 @@
 import json, os.path, sys
 from collections import OrderedDict
+from quickstart import *
 def print_usage():
 	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
 	sys.exit(2)
@@ -44,4 +45,28 @@ class Data:
 		self.rangeName = self.rangeName + ':' + column + self.row
 		return self.rangeName
 
-			# print i
+	def run_checks(self):
+		if self.check_call_sheets_api():
+			self.temp() 
+
+	def check_call_sheets_api(self):
+		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
+			print 'Either column or row is missing'
+			sys.exit(2)
+		elif self.row != "" and self.column != "":
+			return True
+		else:
+			return False
+
+	def temp(self):
+		files = test()
+		print files
+		for row in files:
+			for index, item in enumerate(row):
+				if index == 0:
+					self.set_config(item)
+				else:
+					self.set_input(item)
+
+	def temp1(self):
+		print 'temp1'
