@@ -2,7 +2,7 @@ from collections import OrderedDict
 import getopt,sys
 from lib.common import *
 from lib.data import *
-from lib import quickstart as sheets
+from lib.quickstart import *
 
 def print_usage():
 	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
@@ -64,6 +64,7 @@ def main(argv):
 		print_usage()
 
 	data_obj = Data()
+	sheets = Sheets()
 	for opt, arg in opts:
 		if opt == '-h':
 			print_usage()
@@ -77,13 +78,13 @@ def main(argv):
 			else:
 				data_obj.set_input(arg)
 		elif opt in ("--row"):
-			sheets.test()
+			print data_obj.set_row(arg)
 		elif opt in ("--column"):
-			sheets.test()
+			print data_obj.set_column(arg)
 			# data_obj.set_config(arg)
 
 	# run(data_obj)
 
 if __name__ == "__main__":
-	main(sys.argv[1:])
 
+	main(sys.argv[1:])

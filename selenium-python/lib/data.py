@@ -14,6 +14,8 @@ def check_json_file(file):
 
 class Data:
 	input = []
+	rangeName = 'Sheet1!A'
+	row = column = ''
 	def set_config(self, config):
 		if not os.path.isfile(config):
 			print 'ERROR: Not a file. JSON file needed'
@@ -31,5 +33,15 @@ class Data:
 		with open(files) as input_file:
 			data = check_json_file(input_file)
 			Data.input.append(data)
+
+	def set_row(self, row):
+		self.row = row
+		self.rangeName = self.rangeName + row
+		return self.rangeName
+
+	def set_column(self, column):
+		self.column = column
+		self.rangeName = self.rangeName + ':' + column + self.row
+		return self.rangeName
 
 			# print i
