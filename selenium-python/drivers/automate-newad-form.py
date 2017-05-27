@@ -1,4 +1,7 @@
-from common import *
+import sys,os
+sys.path.append('../')
+from lib.data import *
+from lib.common import *
 from collections import OrderedDict
 
 def print_usage():

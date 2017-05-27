@@ -1,7 +1,7 @@
-from common import *
+from lib.common import *
 from collections import OrderedDict
-import getopt
-from data import *
+import getopt,sys
+from lib.data import *
 
 def print_usage():
 	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
