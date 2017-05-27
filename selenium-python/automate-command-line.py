@@ -1,7 +1,8 @@
-from lib.common import *
 from collections import OrderedDict
 import getopt,sys
+from lib.common import *
 from lib.data import *
+from lib import quickstart as sheets
 
 def print_usage():
 	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
@@ -51,7 +52,7 @@ def run(data_obj):
 
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv,"hc:i:",["config=","input="])
+		opts, args = getopt.getopt(argv,"hc:i:",["config=","input=","row=","column="])
 	except IndexError:
 		print 'ERROR: No input file'
 		print_usage()
@@ -75,9 +76,13 @@ def main(argv):
 					data_obj.set_input(i)
 			else:
 				data_obj.set_input(arg)
+		elif opt in ("--row"):
+			sheets.test()
+		elif opt in ("--column"):
+			sheets.test()
+			# data_obj.set_config(arg)
 
-	run(data_obj)
-
+	# run(data_obj)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
