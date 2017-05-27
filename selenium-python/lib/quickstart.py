@@ -42,7 +42,7 @@ def get_credentials():
 		print('Storing credentials to ' + credential_path)
 	return credentials
 
-def test():
+def call_sheets_api(data):
 	"""Shows basic usage of the Sheets API.
 
 	Creates a Sheets API service object and prints the names and majors of
@@ -57,9 +57,8 @@ def test():
 							  discoveryServiceUrl=discoveryUrl)
 
 	spreadsheetId = '1QvIKJiT5TbpZtMr7mNyG2bPcN6tHjVBf3v4f4nEmc4k'
-	rangeName = 'Sheet1!A6:D6'
 	result = service.spreadsheets().values().get(
-		spreadsheetId=spreadsheetId, range=rangeName).execute()
+		spreadsheetId=spreadsheetId, range=data.rangeName).execute()
 	values = result.get('values', [])
 
 	if not values:

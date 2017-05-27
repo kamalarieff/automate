@@ -47,7 +47,7 @@ class Data:
 
 	def run_checks(self):
 		if self.check_call_sheets_api():
-			self.temp() 
+			self.get_files_from_sheets_api() 
 
 	def check_call_sheets_api(self):
 		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
@@ -58,8 +58,8 @@ class Data:
 		else:
 			return False
 
-	def temp(self):
-		files = test()
+	def get_files_from_sheets_api(self):
+		files = call_sheets_api(self)
 		print files
 		for row in files:
 			for index, item in enumerate(row):
