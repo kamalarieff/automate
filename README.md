@@ -22,6 +22,19 @@ $ sudo pip install selenium
 * url: The url you want to launch the browser with
 * repeat: How many times you want to repeat the automation
 
+#### Example
+
+```javascript
+{
+	"config":[
+	{
+		"url":"http://www-schibstedclassifiedmedia.mudah.my",
+		"repeat":"2"
+	}
+	]
+}
+```
+
 ### Assert
 
 * value: Value you expect to be in the page
@@ -30,7 +43,7 @@ $ sudo pip install selenium
 
 * url: Redirect the browser to this url
 
-### Automation
+### Actions
 
 * wait: Time in seconds you want to wait. Can be used anytime e.g. before or after the element has been filled
 * type: Type of the element
@@ -53,7 +66,7 @@ $ sudo pip install selenium
 * multiple: Used for when multiple elements have the same id. First element starts with 0
 * clear: Clear the element before inputting
 
-### Example
+#### Example
 
 ```javascript
 {
