@@ -22,14 +22,14 @@ class Data:
 
 		with open(config) as config_file:
 			data = check_json_file(config_file)
-			config = {}
+			temp = {}
+			temp["config"] = {}
 
 			for k,v in data.items():
-				config["url"] = v[0]["url"]
-				config["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+				temp["config"]["url"] = v[0]["url"]
+				temp["config"]["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 
-			print "in here"
-			self.tests.append(config)
+			self.tests.append(temp)
 	
 	def set_input(self, files):
 		print files

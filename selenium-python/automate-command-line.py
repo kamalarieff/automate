@@ -3,10 +3,6 @@ import getopt,sys
 from lib.common import *
 from lib.data import *
 
-def print_usage():
-	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
-	sys.exit(2)
-
 driver = []
 def run(data_obj):
 	for index in range(0, data_obj.repeat):
@@ -76,13 +72,20 @@ def main(argv):
 			else:
 				data_obj.set_input(arg)
 		elif opt in ("--row"):
-			print data_obj.set_row(arg)
+			data_obj.set_row(arg)
 		elif opt in ("--column"):
-			print data_obj.set_column(arg)
+			data_obj.set_column(arg)
 
 	data_obj.run_checks()
+	for i in data_obj.tests:
+		print i["config"]["url"]
+		print i["config"]["repeat"]
 
-	run(data_obj)
+	# print data_obj.tests[0]
+	# print data_obj.tests[0]["config"]["url"]
+	# print data_obj.tests[0]["config"]["repeat"]
+
+	# run(data_obj)
 
 if __name__ == "__main__":
 
