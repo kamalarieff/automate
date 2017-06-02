@@ -12,6 +12,7 @@ def check_json_file(file):
 
 class Data:
 	input = []
+	tests = []
 	rangeName = 'Sheet1!A'
 	row = column = ''
 	def set_config(self, config):
@@ -21,10 +22,14 @@ class Data:
 
 		with open(config) as config_file:
 			data = check_json_file(config_file)
+			config = {}
 
 			for k,v in data.items():
-				Data.url = v[0]["url"]
-				Data.repeat = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+				config["url"] = v[0]["url"]
+				config["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+
+			print "in here"
+			self.tests.append(config)
 	
 	def set_input(self, files):
 		print files
@@ -59,8 +64,11 @@ class Data:
 	def get_files_from_sheets_api(self):
 		files = call_sheets_api(self)
 		for row in files:
+			print 'row: {}'.format(row)
 			for index, item in enumerate(row):
 				if index == 0:
+					print 'config: {}'.format(item)
 					self.set_config(item)
 				else:
+					print 'actions: {}'.format(item)
 					self.set_input(item)
