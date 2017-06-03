@@ -33,13 +33,11 @@ class Data:
 	
 	def set_input(self, files):
 		print files
-		temp = []
 
 		with open(files) as input_file:
 			data = check_json_file(input_file)
-			temp.append(data)
 
-		return temp
+		return data
 
 	def set_row(self, row):
 		self.row = row

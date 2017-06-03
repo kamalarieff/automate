@@ -5,45 +5,47 @@ from lib.data import *
 
 driver = []
 def run(data_obj):
-	for index in range(0, data_obj.repeat):
-		driver.append(get_driver(data_obj.url))
-		for data in data_obj.input:
-			for k,v in data.items():
-				print k
-				if k in 'assert':
-					for i in v:
-						print "Asserting %s in page" % (i["value"])
-						assert str(i["value"]) in driver[index].page_source
-				elif k in 'browser':
-					driver[index].get(str(v[0]["url"]))
-				else:
-					for i in v:
-						print 'i: ',i
-						if 'wait' in i:
-							time.sleep(int(i["wait"]))
-						attr = str(i["attr"])
-						try:
-							if (str(i["type"]) not in "image"):
-								WebDriverWait(driver[index], 60).until(
-									EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
-								)
-						except:
-							print 'Did not find element'
+	for test in data_obj.tests:
+		for index in range(0, test["config"]["repeat"]):
+			driver.append(get_driver(test["config"]["url"]))
+			for data in test["input"]:
+				print 'data: ', data
+				for k,v in data.items():
+					print k
+					if k in 'assert':
+						for i in v:
+							print "Asserting %s in page" % (i["value"])
+							assert str(i["value"]) in driver[index].page_source
+					elif k in 'browser':
+						driver[index].get(str(v[0]["url"]))
+					else:
+						for i in v:
+							print 'i: ',i
+							if 'wait' in i:
+								time.sleep(int(i["wait"]))
+							attr = str(i["attr"])
+							try:
+								if (str(i["type"]) not in "image"):
+									WebDriverWait(driver[index], 60).until(
+										EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
+									)
+							except:
+								print 'Did not find element'
 
-						element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
-						if (str(i["type"]) == "dropdown"):
-							select = Select(element)
-							select.select_by_value(str(i["value"]))
-						elif (str(i["type"]) in ["text", "image"]):
-							if 'clear' in i:
-								element.clear()
-							element.send_keys(str(i["value"]))
-						elif (str(i["type"]) in ["button","checkbox","link"]):
-							if 'multiple' in i:
-								list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
-								list[int(i["multiple"])].click()
-							else:
-								element.click()
+							element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
+							if (str(i["type"]) == "dropdown"):
+								select = Select(element)
+								select.select_by_value(str(i["value"]))
+							elif (str(i["type"]) in ["text", "image"]):
+								if 'clear' in i:
+									element.clear()
+								element.send_keys(str(i["value"]))
+							elif (str(i["type"]) in ["button","checkbox","link"]):
+								if 'multiple' in i:
+									list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
+									list[int(i["multiple"])].click()
+								else:
+									element.click()
 
 def main(argv):
 	try:
@@ -88,7 +90,7 @@ def main(argv):
 	# print data_obj.tests[1].values()
 	# print iter(data_obj.tests[0])
 
-	# run(data_obj)
+	run(data_obj)
 
 if __name__ == "__main__":
 
