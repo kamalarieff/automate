@@ -1,0 +1,22 @@
+{
+	"1":[
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"region",
+		"value":"9"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_group",
+		"value":"1020"
+	},
+	{
+		"wait":"1",
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"car_dealer"
+	}
+	]
+}

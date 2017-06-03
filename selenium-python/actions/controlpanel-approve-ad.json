@@ -1,0 +1,19 @@
+{
+	"1":[
+	{
+		"type":"link",
+		"element":"XPATH",
+		"attr":"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/div/table/tbody/tr[1]/td[3]/a[1]"
+	},
+	{
+		"type":"link",
+		"element":"XPATH",
+		"attr":"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/div/form/table/tbody/tr[3]/td/div/label[7]"
+	},
+	{
+		"type":"button",
+		"element":"CLASS_NAME",
+		"attr":"SubmitButton"
+	}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"1":[
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"store_hours",
+		"value":"8AM - 8PM"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"company_name",
+		"value":"Subang Jaya"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"orgno",
+		"value":"012312312-1"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"gst-company-agency-name-copy"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"gst-address-postcode-copy"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"gst-id",
+		"value":"12323"
+	}
+	]
+}

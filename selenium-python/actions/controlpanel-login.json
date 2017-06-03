@@ -4,18 +4,18 @@
 		"type":"text",
 		"element":"NAME",
 		"attr":"username",
-		"value":"motor01-pri@gmail.com"
+		"value":"kamal"
 	},
 	{
 		"type":"text",
 		"element":"NAME",
-		"attr":"passwd",
-		"value":"ten20304050"
+		"attr":"cpasswd",
+		"value":"kamal"
 	},
 	{
 		"type":"button",
-		"element":"CLASS_NAME",
-		"attr":"btn-login"
+		"element":"NAME",
+		"attr":"login"
 	}
 	]
 }
