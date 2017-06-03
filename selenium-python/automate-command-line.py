@@ -3,12 +3,14 @@ import getopt,sys
 from lib.common import get_driver,run_actions
 from lib.data import *
 
-driver = []
+driver_list = []
 def run(data_obj):
 	for test in data_obj.tests:
+		driver = []
 		for index in range(0, test["config"]["repeat"]):
 			driver.append(get_driver(test["config"]["url"]))
 			run_actions(driver[index], test["input"])
+		driver_list.append(driver)
 
 def main(argv):
 	try:
