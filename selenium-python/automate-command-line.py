@@ -77,13 +77,16 @@ def main(argv):
 			data_obj.set_column(arg)
 
 	data_obj.run_checks()
-	for i in data_obj.tests:
-		print i["config"]["url"]
-		print i["config"]["repeat"]
+	# for i in data_obj.tests:
+	# 	print 'i: ', i
 
-	# print data_obj.tests[0]
-	# print data_obj.tests[0]["config"]["url"]
-	# print data_obj.tests[0]["config"]["repeat"]
+	print 'url: ', data_obj.tests[0]["config"]["url"]
+	print 'repeat: ', data_obj.tests[0]["config"]["repeat"]
+	print 'input: ', data_obj.tests[0]["input"][0]
+	# print data_obj.tests[1] = input
+	# print data_obj.tests[0].keys()
+	# print data_obj.tests[1].values()
+	# print iter(data_obj.tests[0])
 
 	# run(data_obj)
 

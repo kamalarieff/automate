@@ -20,22 +20,26 @@ class Data:
 			print 'ERROR: Not a file. JSON file needed'
 			print_usage()
 
+		temp = {}
+
 		with open(config) as config_file:
 			data = check_json_file(config_file)
-			temp = {}
-			temp["config"] = {}
 
 			for k,v in data.items():
-				temp["config"]["url"] = v[0]["url"]
-				temp["config"]["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
+				temp["url"] = v[0]["url"]
+				temp["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 
-			self.tests.append(temp)
+		return temp
 	
 	def set_input(self, files):
 		print files
+		temp = []
+
 		with open(files) as input_file:
 			data = check_json_file(input_file)
-			Data.input.append(data)
+			temp.append(data)
+
+		return temp
 
 	def set_row(self, row):
 		self.row = row
@@ -64,11 +68,16 @@ class Data:
 	def get_files_from_sheets_api(self):
 		files = call_sheets_api(self)
 		for row in files:
+			temp = {}
+			temp["config"] = {}
+			temp["input"] = []
 			print 'row: {}'.format(row)
 			for index, item in enumerate(row):
 				if index == 0:
 					print 'config: {}'.format(item)
-					self.set_config(item)
+					temp["config"] = self.set_config(item)
 				else:
 					print 'actions: {}'.format(item)
-					self.set_input(item)
+					temp["input"].append(self.set_input(item))
+
+			self.tests.append(temp)
