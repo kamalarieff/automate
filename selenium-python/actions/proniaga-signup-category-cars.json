@@ -1,0 +1,27 @@
+{
+	"1":[
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"region",
+		"value":"9"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_group",
+		"value":"1020"
+	},
+	{
+		"wait":"1",
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"car_dealer"
+	},
+	{
+		"type":"button",
+		"element":"XPATH",
+		"attr":"//*[@id=\"ContainerMain\"]/div/form/table/tbody/tr[4]/td/input"
+	}
+	]
+}
