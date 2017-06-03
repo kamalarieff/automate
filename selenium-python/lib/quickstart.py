@@ -1,6 +1,7 @@
 from __future__ import print_function
 import httplib2
 import os
+from config import SPREADSHEET_ID
 
 from apiclient import discovery
 from oauth2client import client
@@ -12,7 +13,6 @@ from oauth2client.file import Storage
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Google Sheets API Python Quickstart'
-
 
 def get_credentials():
 	"""Gets valid user credentials from storage.
@@ -56,7 +56,7 @@ def call_sheets_api(data):
 	service = discovery.build('sheets', 'v4', http=http,
 							  discoveryServiceUrl=discoveryUrl)
 
-	spreadsheetId = '1QvIKJiT5TbpZtMr7mNyG2bPcN6tHjVBf3v4f4nEmc4k'
+	spreadsheetId = SPREADSHEET_ID
 	result = service.spreadsheets().values().get(
 		spreadsheetId=spreadsheetId, range=data.rangeName).execute()
 	values = result.get('values', [])
