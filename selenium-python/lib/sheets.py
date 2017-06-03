@@ -1,6 +1,5 @@
 from __future__ import print_function
-import httplib2
-import os
+import httplib2, os
 from config import SPREADSHEET_ID
 
 from apiclient import discovery
