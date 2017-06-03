@@ -1,0 +1,21 @@
+{
+	"1":[
+	{
+		"type":"button",
+		"element":"XPATH",
+		"attr":"/html/body/table/tbody/tr[2]/td/table/tbody/tr/td/div[4]/table/tbody/tr/td/ul/li[1]/a"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"search_field",
+		"value":"kamal.arieff@gmail.com"
+	},
+	{
+		"type":"button",
+		"element":"NAME",
+		"attr":"search",
+		"wait":"3"
+	}
+	]
+}

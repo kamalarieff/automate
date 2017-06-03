@@ -1,0 +1,21 @@
+{
+	"1":[
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"username",
+		"value":"kamal"
+	},
+	{
+		"type":"text",
+		"element":"NAME",
+		"attr":"cpasswd",
+		"value":"kamal"
+	},
+	{
+		"type":"button",
+		"element":"NAME",
+		"attr":"login"
+	}
+	]
+}
