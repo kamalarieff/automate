@@ -1,8 +1,9 @@
 import json, os.path, sys
 from collections import OrderedDict
-from quickstart import *
 from common import print_usage
 from config import SHEET_ID
+import sheets as Sheet
+import local as Local
 def check_json_file(file):
 	try:
 		data = json.load(file, object_pairs_hook=OrderedDict)
@@ -60,31 +61,9 @@ class Data:
 
 	def build_tests_list(self, files=None):
 		if files:
-			self.build_tests_list_for_sheets(files)
+			Sheet.build_tests_list(self, files)
 		else:
-			self.build_tests_list_for_local()
-
-	def build_tests_list_for_sheets(self, sheet_files):
-		for row in sheet_files:
-			temp = {}
-			temp["config"] = {}
-			temp["input"] = []
-			print 'row: {}'.format(row)
-			for index, item in enumerate(row):
-				if index == 0:
-					print 'config: {}'.format(item)
-					temp["config"] = self.set_config(item)
-				else:
-					print 'actions: {}'.format(item)
-					temp["input"].append(self.set_input(item))
-
-			self.tests.append(temp)
-
-	def build_tests_list_for_local(self):
-		temp = {}
-		temp["config"] = self.local_config
-		temp["input"] = self.local_input
-		self.tests.append(temp)
+			Local.build_tests_list(self)
 
 	def check_call_sheets_api(self):
 		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
@@ -97,4 +76,4 @@ class Data:
 			return False
 
 	def get_files_from_sheets_api(self):
-		return call_sheets_api(self)
+		return Sheet.call_sheets_api(self)

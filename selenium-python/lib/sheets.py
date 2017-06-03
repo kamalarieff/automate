@@ -61,3 +61,16 @@ def call_sheets_api(data):
 		spreadsheetId=spreadsheetId, range=data.rangeName).execute()
 	values = result.get('values', [])
 	return values
+
+def build_tests_list(data, sheet_files):
+	for row in sheet_files:
+		temp = {}
+		temp["config"] = {}
+		temp["input"] = []
+		for index, item in enumerate(row):
+			if index == 0:
+				temp["config"] = data.set_config(item)
+			else:
+				temp["input"].append(data.set_input(item))
+
+		data.tests.append(temp)
