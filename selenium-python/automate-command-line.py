@@ -8,44 +8,8 @@ def run(data_obj):
 	for test in data_obj.tests:
 		for index in range(0, test["config"]["repeat"]):
 			driver.append(get_driver(test["config"]["url"]))
-			for data in test["input"]:
-				print 'data: ', data
-				for k,v in data.items():
-					print k
-					if k in 'assert':
-						for i in v:
-							print "Asserting %s in page" % (i["value"])
-							assert str(i["value"]) in driver[index].page_source
-					elif k in 'browser':
-						driver[index].get(str(v[0]["url"]))
-					else:
-						for i in v:
-							print 'i: ',i
-							if 'wait' in i:
-								time.sleep(int(i["wait"]))
-							attr = str(i["attr"])
-							try:
-								if (str(i["type"]) not in "image"):
-									WebDriverWait(driver[index], 60).until(
-										EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
-									)
-							except:
-								print 'Did not find element'
-
-							element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
-							if (str(i["type"]) == "dropdown"):
-								select = Select(element)
-								select.select_by_value(str(i["value"]))
-							elif (str(i["type"]) in ["text", "image"]):
-								if 'clear' in i:
-									element.clear()
-								element.send_keys(str(i["value"]))
-							elif (str(i["type"]) in ["button","checkbox","link"]):
-								if 'multiple' in i:
-									list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
-									list[int(i["multiple"])].click()
-								else:
-									element.click()
+			print 'driver: ', driver
+			run_actions(driver[index], test["input"])
 
 def main(argv):
 	try:
