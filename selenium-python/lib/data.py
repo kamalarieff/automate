@@ -2,6 +2,7 @@ import json, os.path, sys
 from collections import OrderedDict
 from quickstart import *
 from common import print_usage
+from config import SHEET_ID
 def check_json_file(file):
 	try:
 		data = json.load(file, object_pairs_hook=OrderedDict)
@@ -52,26 +53,19 @@ class Data:
 
 	def run_checks(self):
 		if self.check_call_sheets_api():
-			self.get_files_from_sheets_api() 
+			files = self.get_files_from_sheets_api() 
 		else:
-			temp = {}
-			temp["config"] = self.local_config
-			temp["input"] = self.local_input
-			self.tests.append(temp)
+			files = None
+		self.build_tests_list(files)
 
-	def check_call_sheets_api(self):
-		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
-			print 'Either column or row is missing'
-			print_usage()
-			sys.exit(2)
-		elif self.row != "" and self.column != "":
-			return True
+	def build_tests_list(self, files=None):
+		if files:
+			self.build_tests_list_for_sheets(files)
 		else:
-			return False
+			self.build_tests_list_for_local()
 
-	def get_files_from_sheets_api(self):
-		files = call_sheets_api(self)
-		for row in files:
+	def build_tests_list_for_sheets(self, sheet_files):
+		for row in sheet_files:
 			temp = {}
 			temp["config"] = {}
 			temp["input"] = []
@@ -85,3 +79,22 @@ class Data:
 					temp["input"].append(self.set_input(item))
 
 			self.tests.append(temp)
+
+	def build_tests_list_for_local(self):
+		temp = {}
+		temp["config"] = self.local_config
+		temp["input"] = self.local_input
+		self.tests.append(temp)
+
+	def check_call_sheets_api(self):
+		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
+			print 'Either column or row is missing'
+			print_usage()
+			sys.exit(2)
+		elif self.row != "" and self.column != "":
+			return True
+		else:
+			return False
+
+	def get_files_from_sheets_api(self):
+		return call_sheets_api(self)
