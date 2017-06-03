@@ -20,7 +20,6 @@ def print_usage():
 def run_actions(driver, input_data):
 	for data in input_data:
 		for k,v in data.items():
-			print k
 			if k in 'assert':
 				for i in v:
 					print "Asserting %s in page" % (i["value"])
