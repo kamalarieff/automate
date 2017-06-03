@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import getopt,sys
-from lib.common import *
+from lib.common import get_driver,run_actions
 from lib.data import *
 
 driver = []
