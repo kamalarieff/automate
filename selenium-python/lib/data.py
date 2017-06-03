@@ -11,9 +11,10 @@ def check_json_file(file):
 	return data
 
 class Data:
-	input = []
 	tests = []
-	rangeName = 'Sheet1!A'
+	local_input = []
+	local_config = {}
+	rangeName = SHEET_ID
 	row = column = ''
 	def set_config(self, config):
 		if not os.path.isfile(config):
@@ -29,6 +30,7 @@ class Data:
 				temp["url"] = v[0]["url"]
 				temp["repeat"] = int(v[0]["repeat"]) if 'repeat' in v[0] else 1
 
+		self.local_config = temp
 		return temp
 	
 	def set_input(self, files):
@@ -37,21 +39,25 @@ class Data:
 		with open(files) as input_file:
 			data = check_json_file(input_file)
 
+		self.local_input.append(data)
 		return data
 
 	def set_row(self, row):
 		self.row = row
 		self.rangeName = self.rangeName + row
-		return self.rangeName
 
 	def set_column(self, column):
 		self.column = column
-		self.rangeName = self.rangeName + ':' + column + self.row
-		return self.rangeName
+		self.rangeName = self.rangeName + ':' + column
 
 	def run_checks(self):
 		if self.check_call_sheets_api():
 			self.get_files_from_sheets_api() 
+		else:
+			temp = {}
+			temp["config"] = self.local_config
+			temp["input"] = self.local_input
+			self.tests.append(temp)
 
 	def check_call_sheets_api(self):
 		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
