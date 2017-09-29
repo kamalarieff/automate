@@ -1,15 +1,10 @@
 {
-	"browser":[
-	{
-		"url":"https://www2.muddah.com/store/main_login/0"
-	}
-	],
 	"1":[
 	{
 		"type":"text",
 		"element":"NAME",
 		"attr":"username",
-		"value":"jobsnew1@gmail.com"
+		"value":"motor01-pri@gmail.com"
 	},
 	{
 		"type":"text",

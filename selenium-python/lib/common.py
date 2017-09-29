@@ -9,7 +9,7 @@ import sys, time
 import config as CONFIG
 
 def get_driver(url):
-	driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+	driver = webdriver.PhantomJS('/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs')
 	driver.get(url)
 	return driver
 
