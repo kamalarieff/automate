@@ -9,7 +9,15 @@ import sys, time
 import config as CONFIG
 
 def get_driver(url):
-	driver = webdriver.PhantomJS('/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs')
+	if CONFIG.browser == 'Chrome':
+		driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+	elif CONFIG.browser == 'Firefox':
+		driver = webdriver.Firefox()
+	elif CONFIG.browser == 'PhantomJS':
+		driver = webdriver.PhantomJS('/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs')
+	else:
+		print 'Invalid browser driver. Available values: Chrome, Firefox, PhantomJS'
+		sys.exit(2)
 	driver.get(url)
 	return driver
 
