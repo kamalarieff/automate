@@ -178,8 +178,18 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
 
 ```$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json```
 
+#### Google Sheets
+
+##### General
+* [You can follow the steps here to setup your environment](https://developers.google.com/sheets/api/quickstart/python)
+* [It supports multiple rows fetched from sheets i.e. Ranges. You can find the spreadsheet ID and sheet ID here as well.](https://developers.google.com/sheets/api/guides/concepts)
+* Update your spreadsheet ID and sheet ID in ```lib/config.py```
+##### Command
+```$ python automate-command-line.py --row=ROW --column=COLUMN```
+
 ## Helpful references
 
 * [Exception AttributeError: "'Service' object has no attribute 'process'"](https://github.com/dhruvramani/Terminal-on-FB-Messenger/issues/10)
 * [selenium.common.exceptions.WebDriverException: Message: 'ChromeDriver executable needs to be available in the path.](http://stackoverflow.com/questions/8255929/running-webdriver-chrome-with-selenium/8259152#8259152)
-* http://selenium-python.readthedocs.io/installation.html
+* [Selenium Python Docs](http://selenium-python.readthedocs.io/installation.html)
+* [Sheets API](https://developers.google.com/sheets/api/)

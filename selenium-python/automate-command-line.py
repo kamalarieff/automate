@@ -1,57 +1,20 @@
-from lib.common import *
 from collections import OrderedDict
 import getopt,sys
+from lib.common import get_driver,run_actions
 from lib.data import *
 
-def print_usage():
-	print 'usage: python {} -c <configfile>.json -i <inputfile>.json'.format(__file__)
-	sys.exit(2)
-
-driver = []
+driver_list = []
 def run(data_obj):
-	for index in range(0, data_obj.repeat):
-		driver.append(get_driver(data_obj.url))
-		for data in data_obj.input:
-			for k,v in data.items():
-				print k
-				if k in 'assert':
-					for i in v:
-						print "Asserting %s in page" % (i["value"])
-						assert str(i["value"]) in driver[index].page_source
-				elif k in 'browser':
-					driver[index].get(str(v[0]["url"]))
-				else:
-					for i in v:
-						print 'i: ',i
-						if 'wait' in i:
-							time.sleep(int(i["wait"]))
-						attr = str(i["attr"])
-						try:
-							if (str(i["type"]) not in "image"):
-								WebDriverWait(driver[index], 60).until(
-									EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
-								)
-						except:
-							print 'Did not find element'
-
-						element = getattr(driver[index], 'find_element')(getattr(By, str(i["element"])), attr)
-						if (str(i["type"]) == "dropdown"):
-							select = Select(element)
-							select.select_by_value(str(i["value"]))
-						elif (str(i["type"]) in ["text", "image"]):
-							if 'clear' in i:
-								element.clear()
-							element.send_keys(str(i["value"]))
-						elif (str(i["type"]) in ["button","checkbox","link"]):
-							if 'multiple' in i:
-								list = getattr(driver[index], 'find_elements')(getattr(By, str(i["element"])), attr)
-								list[int(i["multiple"])].click()
-							else:
-								element.click()
+	for test in data_obj.tests:
+		driver = []
+		for index in range(0, test["config"]["repeat"]):
+			driver.append(get_driver(test["config"]["url"]))
+			run_actions(driver[index], test["input"])
+		driver_list.append(driver)
 
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv,"hc:i:",["config=","input="])
+		opts, args = getopt.getopt(argv,"hc:i:",["config=","input=","row=","column="])
 	except IndexError:
 		print 'ERROR: No input file'
 		print_usage()
@@ -75,10 +38,15 @@ def main(argv):
 					data_obj.set_input(i)
 			else:
 				data_obj.set_input(arg)
+		elif opt in ("--row"):
+			data_obj.set_row(arg)
+		elif opt in ("--column"):
+			data_obj.set_column(arg)
+
+	data_obj.run_checks()
 
 	run(data_obj)
 
-
 if __name__ == "__main__":
-	main(sys.argv[1:])
 
+	main(sys.argv[1:])
