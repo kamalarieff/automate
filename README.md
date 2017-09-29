@@ -158,7 +158,13 @@ $ source ~/virtualenv/bin/activate
 
 ### Setup
 
+#### Actions
 * Create a new json file with all the input params. See any files in the actions folder for example.
+
+#### Config
+##### Browser
+* Choose between three browsers (Chrome, Firefox, PhantomJS)
+* Update the ``browser`` in ``lib/config.py``
 
 ### Running the script
 
