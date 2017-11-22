@@ -6,13 +6,18 @@
 ```sh
 $ brew install chromedriver
 ```
-* If chromedriver version is less, run
+* If chromedriver version is less or you may run into issues with it, run
 ```sh
-$ brew upgrade
+$ brew upgrade chromedriver
 ```
 #### selenium for python 3.0.2
 ```sh
 $ sudo pip install selenium
+```
+
+#### phantomjs
+```sh
+$ brew install phantomjs
 ```
 
 ## Input files
