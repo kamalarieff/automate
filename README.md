@@ -2,7 +2,7 @@
 
 ### Required installations
 
-#### chromedriver 2.26.436421
+#### chromedriver
 ```sh
 $ brew install chromedriver
 ```
