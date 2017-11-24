@@ -20,6 +20,11 @@ $ sudo pip install selenium
 $ brew install phantomjs
 ```
 
+#### Google sheets API
+```sh
+$ pip install --upgrade google-api-python-client
+```
+
 ## Input files
 
 ### Config
