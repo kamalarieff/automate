@@ -197,11 +197,38 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
 #### Google Sheets
 
 ##### General
-* [You can follow the steps here to setup your environment](https://developers.google.com/sheets/api/quickstart/python)
 * [It supports multiple rows fetched from sheets i.e. Ranges. You can find the spreadsheet ID and sheet ID here as well.](https://developers.google.com/sheets/api/guides/concepts)
+
+##### Setup
+* [You can follow the steps here to setup your environment](https://developers.google.com/sheets/api/quickstart/python)
+  * From here, you will get `client_secret.json` file.
 * Update your spreadsheet ID and sheet ID in ```lib/config.py```
+* Your directory should look like this
+  ```
+    .
+    ├── README.md
+    ├── mechanize
+    │   ├── automate_form.py
+    │   └── forms
+    └── selenium-python
+        ├── actions
+        ├── automate-command-line.py
+        ├── client_secret.json
+        ├── configs
+        ├── drivers
+        ├── lib
+        ├── quickstart.py
+        └── scripts
+  ```
+* Run this command to authenticate yourself to the Google Sheets API
+  ```
+  $ python quickstart.py
+  ```
 ##### Command
 ```$ python automate-command-line.py --row=ROW --column=COLUMN```
+
+##### Example
+```$ python automate-command-line.py --row=A15 --column=C15```
 
 ## Helpful references
 
