@@ -188,11 +188,15 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
 ##### Two ways to insert
 1. Separate by commas
 
-```$ python automate-command-line.py -c config_file.json -i input_file1.json,input_file2.json```
+```sh
+$ python automate-command-line.py -c config_file.json -i input_file1.json,input_file2.json
+```
 
 2. Multiple -i flags
 
-```$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json```
+```sh
+$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json
+```
 
 #### Google Sheets
 
@@ -221,14 +225,18 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
         └── scripts
   ```
 * Run this command to authenticate yourself to the Google Sheets API
-  ```
+  ```sh
   $ python quickstart.py
   ```
 ##### Command
-```$ python automate-command-line.py --row=ROW --column=COLUMN```
+```sh
+$ python automate-command-line.py --row=ROW --column=COLUMN
+```
 
 ##### Example
-```$ python automate-command-line.py --row=A15 --column=C15```
+```sh
+$ python automate-command-line.py --row=A15 --column=C15
+```
 
 ## Helpful references
 
