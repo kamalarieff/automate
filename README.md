@@ -188,20 +188,55 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
 ##### Two ways to insert
 1. Separate by commas
 
-```$ python automate-command-line.py -c config_file.json -i input_file1.json,input_file2.json```
+```sh
+$ python automate-command-line.py -c config_file.json -i input_file1.json,input_file2.json
+```
 
 2. Multiple -i flags
 
-```$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json```
+```sh
+$ python automate-command-line.py -c config_file.json -i input_file1.json -i input_file2.json
+```
 
 #### Google Sheets
 
 ##### General
-* [You can follow the steps here to setup your environment](https://developers.google.com/sheets/api/quickstart/python)
 * [It supports multiple rows fetched from sheets i.e. Ranges. You can find the spreadsheet ID and sheet ID here as well.](https://developers.google.com/sheets/api/guides/concepts)
+
+##### Setup
+* [You can follow the steps here to setup your environment](https://developers.google.com/sheets/api/quickstart/python)
+  * From here, you will get `client_secret.json` file.
 * Update your spreadsheet ID and sheet ID in ```lib/config.py```
+* Your directory should look like this
+  ```
+    .
+    ├── README.md
+    ├── mechanize
+    │   ├── automate_form.py
+    │   └── forms
+    └── selenium-python
+        ├── actions
+        ├── automate-command-line.py
+        ├── client_secret.json
+        ├── configs
+        ├── drivers
+        ├── lib
+        ├── quickstart.py
+        └── scripts
+  ```
+* Run this command to authenticate yourself to the Google Sheets API
+  ```sh
+  $ python quickstart.py
+  ```
 ##### Command
-```$ python automate-command-line.py --start-cell=START_CELL --end-cell=END_CELL```
+```sh
+$ python automate-command-line.py --start-cell=START_CELL --end-cell=END_CELL
+```
+
+##### Example
+```sh
+$ python automate-command-line.py --start-cell=A15 --end-cell=C15
+```
 
 ## Helpful references
 
