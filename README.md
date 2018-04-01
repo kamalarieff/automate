@@ -230,12 +230,12 @@ $ python automate-command-line.py -c config_file.json -i input_file1.json -i inp
   ```
 ##### Command
 ```sh
-$ python automate-command-line.py --row=ROW --column=COLUMN
+$ python automate-command-line.py --start-cell=START_CELL --end-cell=END_CELL
 ```
 
 ##### Example
 ```sh
-$ python automate-command-line.py --row=A15 --column=C15
+$ python automate-command-line.py --start-cell=A15 --end-cell=C15
 ```
 
 ## Helpful references

@@ -14,7 +14,7 @@ def run(data_obj):
 
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv,"hc:i:",["config=","input=","row=","column="])
+		opts, args = getopt.getopt(argv,"hc:i:",["config=","input=","start-cell=","end-cell="])
 	except IndexError:
 		print 'ERROR: No input file'
 		print_usage()
@@ -38,10 +38,10 @@ def main(argv):
 					data_obj.set_input(i)
 			else:
 				data_obj.set_input(arg)
-		elif opt in ("--row"):
-			data_obj.set_row(arg)
-		elif opt in ("--column"):
-			data_obj.set_column(arg)
+		elif opt in ("--start-cell"):
+			data_obj.set_start_cell(arg)
+		elif opt in ("--end-cell"):
+			data_obj.set_end_cell(arg)
 
 	data_obj.run_checks()
 

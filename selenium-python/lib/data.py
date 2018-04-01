@@ -17,7 +17,7 @@ class Data:
 	local_input = []
 	local_config = {}
 	rangeName = SHEET_ID
-	row = column = ''
+	start_cell = end_cell = ''
 	def set_config(self, config):
 		if not os.path.isfile(config):
 			print 'ERROR: Not a file. JSON file needed'
@@ -44,13 +44,13 @@ class Data:
 		self.local_input.append(data)
 		return data
 
-	def set_row(self, row):
-		self.row = row
-		self.rangeName = self.rangeName + row
+	def set_start_cell(self, start_cell):
+		self.start_cell = start_cell
+		self.rangeName = self.rangeName + start_cell
 
-	def set_column(self, column):
-		self.column = column
-		self.rangeName = self.rangeName + ':' + column
+	def set_end_cell(self, end_cell):
+		self.end_cell = end_cell
+		self.rangeName = self.rangeName + ':' + end_cell
 
 	def run_checks(self):
 		if self.check_call_sheets_api():
@@ -66,11 +66,11 @@ class Data:
 			Local.build_tests_list(self)
 
 	def check_call_sheets_api(self):
-		if (self.row != "" and self.column == "") or (self.row == "" and self.column != ""):
-			print 'Either column or row is missing'
+		if (self.start_cell != "" and self.end_cell == "") or (self.start_cell == "" and self.end_cell != ""):
+			print 'Either start_cell or end_cell is missing'
 			print_usage()
 			sys.exit(2)
-		elif self.row != "" and self.column != "":
+		elif self.start_cell != "" and self.end_cell != "":
 			return True
 		else:
 			return False

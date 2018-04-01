@@ -22,7 +22,7 @@ def get_driver(url):
 	return driver
 
 def print_usage():
-	print 'usage: python {} -c <configfile>.json -i <inputfile>.json --row --column'.format(CONFIG.main_driver)
+	print 'usage: python {} -c <configfile>.json -i <inputfile>.json --start-cell --end-cell'.format(CONFIG.main_driver)
 	sys.exit(2)
 
 def run_actions(driver, input_data):
