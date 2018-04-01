@@ -1,0 +1,10 @@
+{
+	"1":[
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_group",
+		"value":"1040"
+	}
+	]
+}

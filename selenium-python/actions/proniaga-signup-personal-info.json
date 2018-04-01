@@ -4,7 +4,13 @@
 		"type":"text",
 		"element":"ID",
 		"attr":"name",
-		"value":"Yoghirt Co"
+		"value":"Yoghirt Co 6"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"company_name",
+		"value":"Yoghirt Co 6"
 	},
 	{
 		"type":"text",
@@ -82,7 +88,7 @@
 		"type":"text",
 		"element":"ID",
 		"attr":"email",
-		"value":"kamal.arieff+proniaga@gmail.com"
+		"value":"kamal.arieff+proniaga6@gmail.com"
 	}
 	]
 }

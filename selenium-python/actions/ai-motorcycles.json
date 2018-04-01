@@ -4,37 +4,44 @@
 		"type":"dropdown",
 		"element":"ID",
 		"attr":"category_group",
-		"value":"4180"
+		"value":"1040"
+	},
+	{
+		"wait":"2",
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"motorcycle_make",
+		"value":"9"
 	},
 	{
 		"type":"dropdown",
 		"element":"ID",
-		"attr":"bag_type",
-		"value":"1"
+		"attr":"motorcycle_model",
+		"value":"114"
 	},
 	{
 		"type":"dropdown",
 		"element":"ID",
-		"attr":"gender_type",
-		"value":"1"
+		"attr":"manufactured_date",
+		"value":"2018"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"subject",
-		"value":"TEST FOR Bags and Wallets IN AI"
+		"value":"TEST FOR MOTORCYCLE CATEGORY ADS"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"body",
-		"value":"Tom Bihn Synapse 19"
+		"value":"TEST FOR MOTORCYCLE CATEGORY ADS"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"price",
-		"value":"1300"
+		"value":"125000"
 	}
 	]
 }

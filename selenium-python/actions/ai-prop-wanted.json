@@ -1,0 +1,46 @@
+{
+	"1":[
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"category_group",
+		"value":"2020"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"rk",
+		"value":"1"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"p_ad",
+		"value":"1"
+	},
+	{
+		"type":"image",
+		"element":"ID",
+		"attr":"image_0",
+		"value":"/Users/kamal/Pictures/dota.jpg"
+	},
+	{
+		"type":"dropdown",
+		"element":"ID",
+		"attr":"property_type",
+		"value":"1"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"subject",
+		"value":"TEST FOR APARTMENT CATEGORY WANTED ADS"
+	},
+	{
+		"type":"text",
+		"element":"ID",
+		"attr":"body",
+		"value":"TEST FOR APARTMENT CATEGORY WANTED ADS"
+	}
+	]
+}

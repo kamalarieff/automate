@@ -23,12 +23,6 @@
 		"element":"ID",
 		"attr":"price",
 		"value":"619"
-	},
-	{
-		"type":"dropdown",
-		"element":"ID",
-		"attr":"area",
-		"value":"357"
 	}
 	]
 }

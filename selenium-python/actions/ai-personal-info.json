@@ -16,7 +16,7 @@
 		"type":"text",
 		"element":"ID",
 		"attr":"email",
-		"value":"kamal.arieff@gmail.com"
+		"value":"kamal67@gmail.com"
 	},
 	{
 		"type":"text",
@@ -28,19 +28,13 @@
 		"type":"text",
 		"element":"ID",
 		"attr":"passwd",
-		"value":"123123"
+		"value":"jackson123"
 	},
 	{
 		"type":"text",
 		"element":"ID",
 		"attr":"passwd_ver",
-		"value":"123123"
-	},
-	{
-		"type":"checkbox",
-		"element":"ID",
-		"attr":"logintochat",
-		"value":"1"
+		"value":"jackson123"
 	}
 	]
 }

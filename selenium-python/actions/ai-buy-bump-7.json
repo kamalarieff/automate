@@ -1,0 +1,22 @@
+{
+	"1":[
+	{
+		"wait":"2",
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"bump_daily",
+		"value":"1"
+	},
+	{
+		"type":"checkbox",
+		"element":"ID",
+		"attr":"credit_card",
+		"value":"1"
+	},
+	{
+		"type":"button",
+		"element":"ID",
+		"attr":"buy-now-copy"
+	}
+	]
+}
