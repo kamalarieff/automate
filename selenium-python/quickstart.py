@@ -71,10 +71,7 @@ def main():
     if not values:
         print('No data found.')
     else:
-        print('Name, Major:')
-        for row in values:
-            # Print columns A and E, which correspond to indices 0 and 4.
-            print('%s, %s' % (row[0], row[4]))
+        print('You are authorized. You can start using the Google Sheets Automation now.')
 
 
 if __name__ == '__main__':
