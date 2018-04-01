@@ -201,7 +201,7 @@ $ python automate-command-line.py -c config_file.json -i input_file.json
 * [It supports multiple rows fetched from sheets i.e. Ranges. You can find the spreadsheet ID and sheet ID here as well.](https://developers.google.com/sheets/api/guides/concepts)
 * Update your spreadsheet ID and sheet ID in ```lib/config.py```
 ##### Command
-```$ python automate-command-line.py --row=ROW --column=COLUMN```
+```$ python automate-command-line.py --start-cell=START_CELL --end-cell=END_CELL```
 
 ## Helpful references
 
