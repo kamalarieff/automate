@@ -87,6 +87,13 @@
 			"element":"ID",
 			"attr":"rk",
 			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
+			"value":"1"
 		}
 	],
 	"1080":[
@@ -457,6 +464,13 @@
 			"element":"ID",
 			"attr":"rk",
 			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
+			"value":"1"
 		}
 	],
 	"3040":[
@@ -486,6 +500,13 @@
 			"type":"checkbox",
 			"element":"ID",
 			"attr":"rk",
+			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
 			"value":"1"
 		}
 	],
@@ -517,6 +538,13 @@
 			"element":"ID",
 			"attr":"rk",
 			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
+			"value":"1"
 		}
 	],
 	"3080":[
@@ -546,6 +574,13 @@
 			"type":"checkbox",
 			"element":"ID",
 			"attr":"rk",
+			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
 			"value":"1"
 		}
 	],
@@ -584,6 +619,20 @@
 			"element":"ID",
 			"attr":"rk",
 			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
+			"value":"3"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_two",
+			"value":"9"
 		}
 	],
 	"3120":[
@@ -613,6 +662,13 @@
 			"type":"checkbox",
 			"element":"ID",
 			"attr":"rk",
+			"value":"1"
+		},
+		{
+			"wait":"1",
+			"type":"dropdown",
+			"element":"ID",
+			"attr":"category_level_one",
 			"value":"1"
 		}
 	],
