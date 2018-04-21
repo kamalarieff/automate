@@ -1,6 +1,6 @@
 from __future__ import print_function
 import httplib2, os
-from config import SPREADSHEET_ID
+from lib.config import SPREADSHEET_ID
 
 from apiclient import discovery
 from oauth2client import client

@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import sys, time
-import config as CONFIG
+import lib.config as CONFIG
 
 def get_driver(url):
 	if CONFIG.browser == 'Chrome':
@@ -16,13 +16,13 @@ def get_driver(url):
 	elif CONFIG.browser == 'PhantomJS':
 		driver = webdriver.PhantomJS('/usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs')
 	else:
-		print 'Invalid browser driver. Available values: Chrome, Firefox, PhantomJS'
+		print('Invalid browser driver. Available values: Chrome, Firefox, PhantomJS')
 		sys.exit(2)
 	driver.get(url)
 	return driver
 
 def print_usage():
-	print 'usage: python {} -c <configfile>.json -i <inputfile>.json --start-cell --end-cell'.format(CONFIG.main_driver)
+	print('usage: python {} -c <configfile>.json -i <inputfile>.json --start-cell --end-cell'.format(CONFIG.main_driver))
 	sys.exit(2)
 
 def run_actions(driver, input_data):
@@ -30,13 +30,13 @@ def run_actions(driver, input_data):
 		for k,v in data.items():
 			if k in 'assert':
 				for i in v:
-					print "Asserting %s in page" % (i["value"])
+					print("Asserting {} in page",i["value"])
 					assert str(i["value"]) in driver.page_source
 			elif k in 'browser':
 				driver.get(str(v[0]["url"]))
 			else:
 				for i in v:
-					print 'i: ',i
+					print('i: ',i)
 					if 'wait' in i:
 						time.sleep(int(i["wait"]))
 					attr = str(i["attr"])
@@ -46,7 +46,7 @@ def run_actions(driver, input_data):
 								EC.element_to_be_clickable((getattr(By,	str(i["element"])), attr))
 							)
 					except:
-						print 'Did not find element'
+						print('Did not find element')
 
 					element = getattr(driver, 'find_element')(getattr(By, str(i["element"])), attr)
 					if (str(i["type"]) == "dropdown"):

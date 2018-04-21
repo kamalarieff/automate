@@ -1,14 +1,14 @@
 import json, os.path, sys
 from collections import OrderedDict
-from common import print_usage
-from config import SHEET_ID
-import sheets as Sheet
-import local as Local
+from lib.common import print_usage
+from lib.config import SHEET_ID
+import lib.sheets as Sheet
+import lib.local as Local
 def check_json_file(file):
 	try:
 		data = json.load(file, object_pairs_hook=OrderedDict)
 	except:
-		print 'ERROR: Not a JSON file'
+		print('ERROR: Not a JSON file')
 		print_usage()
 	return data
 
@@ -20,7 +20,7 @@ class Data:
 	start_cell = end_cell = ''
 	def set_config(self, config):
 		if not os.path.isfile(config):
-			print 'ERROR: Not a file. JSON file needed'
+			print('ERROR: Not a file. JSON file needed')
 			print_usage()
 
 		temp = {}
@@ -36,7 +36,7 @@ class Data:
 		return temp
 	
 	def set_input(self, files):
-		print files
+		print(files)
 
 		with open(files) as input_file:
 			data = check_json_file(input_file)
@@ -67,7 +67,7 @@ class Data:
 
 	def check_call_sheets_api(self):
 		if (self.start_cell != "" and self.end_cell == "") or (self.start_cell == "" and self.end_cell != ""):
-			print 'Either start_cell or end_cell is missing'
+			print('Either start_cell or end_cell is missing')
 			print_usage()
 			sys.exit(2)
 		elif self.start_cell != "" and self.end_cell != "":

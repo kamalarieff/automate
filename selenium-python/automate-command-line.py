@@ -16,10 +16,10 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv,"hc:i:",["config=","input=","start-cell=","end-cell="])
 	except IndexError:
-		print 'ERROR: No input file'
+		print('ERROR: No input file')
 		print_usage()
 	except getopt.GetoptError:
-		print 'Unsupported argument'
+		print('Unsupported argument')
 		print_usage()
 
 	if len(opts) == 0:
